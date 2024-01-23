@@ -1,10 +1,10 @@
 import './App.css'
-import Home from './pages/home'
+import Upload from './pages/upload'
 
 function App() {
   return (
     <>
-      <Home />
+      <Upload />
     </>
   )
 }
