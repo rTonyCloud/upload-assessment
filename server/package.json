@@ -2,16 +2,19 @@
   "name": "assessment-server",
   "version": "1.0.0",
   "description": "server for assessment test",
-  "main": "server.ts",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "npm test",
-    "start": "node server.ts",
+    "start": "node server.js",
     "build": "tsc",
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.js",
+    "watch": "nodemon -w"
   },
   "author": "tony rivera",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^20.11.5"
   },
   "dependencies": {
