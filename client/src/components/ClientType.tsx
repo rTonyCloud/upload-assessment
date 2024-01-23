@@ -1,27 +1,27 @@
-import { useState, ChangeEvent } from 'react'
-
+import Toggle from './UI/toggle'
 import clientData from '../mockData/clientData'
-
-type ClientType = 'single' | 'multiple'
+import useSelectClient from '../hooks/useSelectClient'
 
 const SelectClientType: React.FC = (): JSX.Element => {
-  const [selectClient, setSelectClient] = useState<ClientType>('single')
-
-  const handleClientTypeChange = (
-    event: ChangeEvent<HTMLSelectElement>
-  ): void => {
-    setSelectClient(event.target.value as ClientType)
-  }
-
+  const { selectClient, handleClientTypeChange } = useSelectClient()
   return (
     <div>
-      <h3>Client Type:</h3>
+      <h3>Client:</h3>
       <label>
-        Client Type:
-        <select value={selectClient} onChange={handleClientTypeChange}>
-          <option value="Single">Single</option>
-          <option value="Multiple">Multiple</option>
-        </select>
+        <Toggle
+          name="clientType"
+          value="single"
+          label="Single"
+          checked={selectClient === 'single'}
+          onChange={handleClientTypeChange}
+        />
+        <Toggle
+          name="clientType"
+          value="multiple"
+          label="Multiple"
+          checked={selectClient === 'multiple'}
+          onChange={handleClientTypeChange}
+        />
       </label>
       {selectClient === 'single' ? (
         <div>
