@@ -1,6 +1,6 @@
-import Toggle from './UI/toggle'
-import clientData from '../mockData/clientData'
+import { clientData } from '../mockData/clientData'
 import useSelectClient from '../hooks/useSelectClient'
+import RadioButton from './UI/radio'
 
 const SelectClientType: React.FC = (): JSX.Element => {
   const { selectClient, handleClientTypeChange } = useSelectClient()
@@ -8,14 +8,14 @@ const SelectClientType: React.FC = (): JSX.Element => {
     <div>
       <h3>Client:</h3>
       <label>
-        <Toggle
+        <RadioButton
           name="clientType"
           value="single"
           label="Single"
           checked={selectClient === 'single'}
           onChange={handleClientTypeChange}
         />
-        <Toggle
+        <RadioButton
           name="clientType"
           value="multiple"
           label="Multiple"
@@ -27,7 +27,10 @@ const SelectClientType: React.FC = (): JSX.Element => {
         <div>
           <label>
             <h4>Testing Center 1:</h4>
-            <select>
+            <select defaultValue="">
+              <option value="" disabled>
+                Select Client
+              </option>
               {clientData.map((client) => (
                 <option key={client.id} value={client.id}>
                   {client.client}

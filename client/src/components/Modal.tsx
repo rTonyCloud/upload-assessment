@@ -1,19 +1,20 @@
 import React, { ReactNode } from 'react'
 import '../styling/components/modal.styling.scss'
 
-interface ModalProps {
-  children?: ReactNode
+interface ModalType {
+  children?: ReactNode | ReactNode[]
   isOpen: boolean
+  toggle: () => void
 }
 
-const Modal: React.FC<ModalProps> = (props: ModalProps): JSX.Element => {
-  const { children, isOpen } = props
+const Modal: React.FC<ModalType> = (props: ModalType): JSX.Element => {
+  const { children, isOpen, toggle } = props
 
   return (
     <>
       {isOpen && (
-        <div className="modal-overlay">
-          <div className="modal-box">{children}</div>
+        <div className="modal-overlay" onClick={toggle}>
+          <div className="modalContent" onClick={(e) => e.stopPropagation()}>{children}</div>
         </div>
       )}
     </>

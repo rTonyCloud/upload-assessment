@@ -4,19 +4,20 @@
   "description": "An upload assessment project",
   "main": "server/server.ts",
   "scripts": {
-    "start-server": "cd server && npm run start",
-    "start-client": "cd client && npm run dev",
-    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
-    "develop": "concurrently \"cd server && npm run watch\" \"npm run start-client\"",
+    "start:server": "cd server && npm run start",
+    "start:client": "cd client && npm run dev",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\" \"npm run db:up\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"npm run start:client\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
     "lint": "concurrently \"cd server && npm run lint\" \"cd ../client && npm run lint\"",
-    "format": "concurrently \"cd server && npm run format\" \"cd ../client && npm run format\""
+    "format": "concurrently \"cd server && npm run format\" \"cd ../client && npm run format\"",
+    "db:up": "docker-compose up -d db",
+    "db:down": "docker-compose down"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "tony rivera",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.11.5",
     "autoprefixer": "^10.4.17",
