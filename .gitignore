@@ -5,12 +5,7 @@ server/node_modules/
 
 *.node_modules/
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
+gi
 # Optional REPL history
 .node_repl_history
 
@@ -21,32 +16,12 @@ server/node_modules/
 *.log
 *.log.*
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.vscode/
-*.swp
-*.swo
-.idea/
-*.sublime-workspace
-*.sublime-project
-*.vs/
-*.vscode/
 
 # Environment Variables
 .env
-.env.*
-
-# Docker volumes
-docker-compose.yml
-docker-compose.*.yml
-docker-compose.override.yml
-*.dockerfile
 
 # Ignore certain lock files
 package-lock.json
-yarn.lock
 
 # Production build files
 /client/build/
@@ -54,33 +29,3 @@ yarn.lock
 /dist/
 /out/
 
-# TypeScript declaration files
-*.d.ts
-
-# TypeScript compiled files
-*/**/*.js
-*/**/*.js.map
-*/**/*.jsx
-*/**/*.tsx
-*/**/*.ts.map
-
-# Ignore global TypeScript config
-tsconfig.json
-/tsconfig.build.json
-
-# Ignore certain config files
-.prettierrc
-.postcssrc.js
-.babelrc
-.eslintrc.json
-.eslintrc.js
-.tslint.json
-
-# Ignore coverage directories
-coverage/
-*.coveragexml
-
-# Ignore log files and databases
-*.log
-*.sql
-*.sqlite

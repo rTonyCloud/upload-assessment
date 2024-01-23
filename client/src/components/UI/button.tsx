@@ -1,0 +1,47 @@
+interface ButtonProps {
+    variant?: 'blue' | 'orange'
+    disabled?: boolean
+    sx?: React.CSSProperties
+    type?: 'button' | 'submit' | undefined
+    onClick?: () => void
+    children: React.ReactNode
+}
+
+const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
+    const { children, variant, sx, onClick, disabled, type } = props
+
+    const returnButtonStyles = (): { backgroundColor: string, color: string, border?: string } => {
+        switch (variant) {
+            case 'orange':
+                return { backgroundColor: '#fff', color: '#FF8C00', border: '1px solid #FF8C00' }
+            default:
+                return { backgroundColor: '#007CF0', color: '#fff', border: '1px solid #007CF0'}
+        }
+    }
+
+    const { backgroundColor, color, border } = returnButtonStyles();
+
+    return <button
+        onClick={onClick}
+        type={type}
+        disabled={disabled}
+        style={{
+            fontSize: '18px',
+            fontWeight: 500,
+            fontFamily: 'roboto',
+            minWidth: '220px',
+            width: 'max-content',
+            borderRadius: '24px',
+            cursor: 'pointer',
+            padding: '8px 12px',
+            backgroundColor,
+            color,
+            border,
+            ...sx,
+        }}
+    >
+        {children}
+    </button>
+}
+
+export default Button

@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - default-network
+
+volumes:
+  mongodb_data_container:
+
+networks:
+  default-network:
+    driver: bridge
