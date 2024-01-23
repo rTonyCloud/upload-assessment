@@ -1,0 +1,24 @@
+{
+  "name": "assessment-server",
+  "version": "1.0.0",
+  "description": "server for assessment test",
+  "main": "server.ts",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.ts",
+    "build": "tsc",
+    "dev": "nodemon server.ts"
+  },
+  "author": "tony rivera",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.5"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "mongoose": "^8.1.0"
+  }
+}
