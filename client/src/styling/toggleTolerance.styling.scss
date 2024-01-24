@@ -1,0 +1,12 @@
+.toggleContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.toggleWrapper {
+    display: flex;
+    position: relative;
+    left: 0;
+    bottom: 2vh;
+    justify-content: flex-end;
+}

@@ -1,0 +1,41 @@
+.fileUploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  border: 1px solid rgba(128, 128, 128, 0.373);
+  border-radius: 15px;
+  width: 37vw;
+  height: 30vh;
+}
+
+.fileUploadContainerText {
+  border: 5px dashed rgba(128, 128, 128, 0.352);
+  border-radius: 20px;
+  height: 20vh;
+  width: 22.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+Button {
+  margin-top: 10px;
+}
+
+.fileIcon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 2vh;
+}
+
+
+.browse {
+  font-weight: bold;
+  cursor: pointer;
+}
