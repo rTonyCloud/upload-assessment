@@ -1,4 +1,4 @@
-import { clientData } from '../mockData/clientData'
+import { clientData } from '../mockData/Data'
 import useSelectClient from '../hooks/useSelectClient'
 import RadioButton from './UI/radio'
 import '../styling/components/clientType.styling.scss'
@@ -8,8 +8,8 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 const SelectClientType: React.FC = (): JSX.Element => {
   const { selectClient, handleClientTypeChange } = useSelectClient()
   return (
-    <div className='container'>
-      <h4 id='client'>Client:</h4>
+    <div className="container">
+      <h4 id="client">Client:</h4>
       <label>
         <RadioButton
           name="clientType"
@@ -27,9 +27,9 @@ const SelectClientType: React.FC = (): JSX.Element => {
         />
       </label>
       {selectClient === 'single' ? (
-        <div className='testCenterSelection'>
+        <div className="testCenterSelection">
           <label>
-            <h4 className='centerHeader'>Testing Center 1:</h4>
+            <h4 className="centerHeader">Testing Center 1:</h4>
             <select defaultValue="">
               <option value="" disabled>
                 Select Client
@@ -40,14 +40,18 @@ const SelectClientType: React.FC = (): JSX.Element => {
                 </option>
               ))}
             </select>
-            <FontAwesomeIcon icon={faClock} size='lg' style={{ position: 'relative', left: '10px', bottom: '.5px'}} />
+            <FontAwesomeIcon
+              icon={faClock}
+              size="lg"
+              style={{ position: 'relative', left: '10px', bottom: '.5px' }}
+            />
           </label>
         </div>
       ) : (
-        <div className='testCenterSelection'>
+        <div className="testCenterSelection">
           {[1, 2, 3, 4].map((centerNumber) => (
             <label key={centerNumber}>
-              <h4 className='centerHeader'>{`Testing Center ${centerNumber}:`}</h4>
+              <h4 className="centerHeader">{`Testing Center ${centerNumber}:`}</h4>
               <select defaultValue="">
                 <option value="" disabled>
                   Select Client
@@ -58,7 +62,11 @@ const SelectClientType: React.FC = (): JSX.Element => {
                   </option>
                 ))}
               </select>
-                <FontAwesomeIcon icon={faClock} size='lg'  style={{ position: 'relative', left: '10px', bottom: '.5px'}} />
+              <FontAwesomeIcon
+                icon={faClock}
+                size="lg"
+                style={{ position: 'relative', left: '10px', bottom: '.5px' }}
+              />
             </label>
           ))}
         </div>
