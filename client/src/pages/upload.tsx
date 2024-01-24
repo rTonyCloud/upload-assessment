@@ -9,7 +9,7 @@ import Button from '../components/UI/button'
 import RadioButton from '../components/UI/radio'
 import SelectClientType from '../components/ClientType'
 import DropDown from '../components/UI/dropDown'
-import { importOptions } from '../mockData/clientData'
+import { importOptions } from '../mockData/Data'
 import Toggle from '../components/toggleTolerance'
 import HR from '../components/UI/hr'
 import FileUpload from '../components/FileUpload'
@@ -19,7 +19,8 @@ export default function Upload() {
   const { isOpen, toggle } = useModal()
   const { selectRadio, handleDistanceChange } = useRadio()
   const { toleranceOptions, handleToggle } = useToleranceToggle()
-  const { inputRef, file, uploadFileHandler, handleDrop, handleDrag } = useUpload()
+  const { inputRef, file, uploadFileHandler, handleDrop, handleDrag } =
+    useUpload()
   return (
     <>
       <Button onClick={toggle}>Upload Now</Button>
@@ -127,7 +128,7 @@ export default function Upload() {
                 <div className="locationSection">
                   <h4>Location Checking</h4>
                   <h4 id="greenFonts">All Available!</h4>
-                  <HR 
+                  <HR
                     style={{
                       width: '60%',
                       bottom: '1.5vh',
