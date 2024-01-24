@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react"
+import { useCallback, useRef, useState } from 'react'
 
 export default function useToleranceToggle() {
   const inputRef = useRef<HTMLInputElement | null>(null)

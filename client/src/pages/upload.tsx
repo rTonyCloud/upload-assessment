@@ -50,7 +50,7 @@ export default function Upload() {
                   />
                   <HR
                     style={{
-                      width: '52%',
+                      width: '53%',
                       height: '.5px',
                       backgroundColor: '#aebac5',
                     }}
@@ -71,7 +71,6 @@ export default function Upload() {
                 <HR
                   style={{
                     width: '40%',
-                    height: '.2px',
                     top: '1.5vh',
                     right: '9.5vw',
                     backgroundColor: '#e0e8eff5',
@@ -84,7 +83,6 @@ export default function Upload() {
                 <HR
                   style={{
                     width: '40%',
-                    height: '.2px',
                     bottom: '1.5vh',
                     right: '9.5vw',
                     backgroundColor: '#e0e8eff5',
@@ -117,7 +115,7 @@ export default function Upload() {
                       onChange={handleDistanceChange}
                     />
                   </div>
-                  <HR 
+                  <HR
                     style={{
                       width: '60%',
                       top: '1.5vh',
