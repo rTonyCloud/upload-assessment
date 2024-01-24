@@ -24,6 +24,10 @@ const FileUpload: React.FC<FileUploadProps> = (
     uploadRef,
   } = props
 
+  const handleBrowse = () => {
+    uploadRef?.current?.click()
+  }
+
   return (
     <section className="fileUpload">
       <div
@@ -35,46 +39,63 @@ const FileUpload: React.FC<FileUploadProps> = (
             icon={faFile}
             size="2xl"
             style={{ color: '#FFD43B' }}
-            className="fileIcon"
+            className="FileIcon"
           />
           <h5>
             Drag & drop here or{' '}
-            <span className="browse" ref={uploadRef} onClick={() => handleFileChange}>
+            <span className="browse" onClick={handleBrowse}>
               browse
             </span>
           </h5>
-          {/* <div>
+          <div>
             <input
               type="file"
               name="file"
               id="file"
               ref={uploadRef}
               onChange={handleFileChange}
-              style={{ width: '300px', height: '100px' }}
+              style={{ display: 'none' }}
             />
-          </div> */}
+          </div>
         </div>
         <Button
           onClick={() => {
-            handleFileChange
+            uploadRef?.current?.click()
           }}
           sx={{ height: '40px' }}>
           Upload Manifest
         </Button>
       </div>
       <div className="fileUploadResult">
-        <HR />
+        <HR
+          style={{
+            width: '80%',
+            backgroundColor: '#aebac5',
+            position: 'relative',
+            right: '0',
+          }}
+        />
         <div className="fileUploadResultText">
           {selectedFile && (
             <>
-              <span className="file-name">{selectedFile.name}</span>
-              <span className="file-size">
+              <span className="uploadFileIcon">
+                <FontAwesomeIcon icon={faFile} size="2x" />
+              </span>
+              <span className="fileName">{selectedFile.name}</span>
+              <span className="fileSize">
                 {(selectedFile.size / 1024 / 1024).toFixed(2)}MB
               </span>
             </>
           )}
         </div>
-        <HR />
+        <HR
+          style={{
+            width: '80%',
+            backgroundColor: '#aebac5',
+            position: 'relative',
+            right: '0',
+          }}
+        />
       </div>
     </section>
   )

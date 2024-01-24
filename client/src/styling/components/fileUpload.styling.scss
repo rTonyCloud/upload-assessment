@@ -8,7 +8,7 @@
   margin-bottom: 0rem;
   border: 1px solid rgba(128, 128, 128, 0.373);
   border-radius: 15px;
-  width: 37vw;
+  width: 37.5vw;
   height: 30vh;
 }
 
@@ -16,7 +16,7 @@
   border: 5px dashed rgba(128, 128, 128, 0.352);
   border-radius: 20px;
   height: 20vh;
-  width: 22.5vw;
+  width: 33.5vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,11 +31,46 @@ Button {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 2vh;
+  align-items: center;
+}
+.FileIcon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  top: 5vh;
+}
+
+.uploadFileIcon {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  left: 7.5vw;
+  top: 0vh;
 }
 
 
+.fileName {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  left: 10.5vw;
+  bottom: 21.5vh;
+}
+
+.fileSize {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: -5vw;
+  right: 0;
+  bottom: 21.5vh;
+}
+
 .browse {
-  font-weight: bold;
+  font-weight: 900 !important;
   cursor: pointer;
 }
