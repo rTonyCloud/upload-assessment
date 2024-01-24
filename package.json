@@ -1,5 +1,5 @@
 {
-  "name": "upload-assessment",
+  "name": "skyhop-assessment",
   "version": "1.0.0",
   "description": "An upload assessment project",
   "main": "server/server.ts",
@@ -10,7 +10,7 @@
     "develop": "concurrently \"cd server && npm run watch\" \"npm run start:client\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build",
+    "build": "cd client && tsc && vite build",
     "lint": "concurrently \"cd server && npm run lint\" \"cd ../client && npm run lint\"",
     "format": "concurrently \"cd server && npm run format\" \"cd ../client && npm run format\"",
     "db:up": "docker-compose up -d db",
@@ -23,5 +23,8 @@
     "autoprefixer": "^10.4.17",
     "concurrently": "^8.2.2",
     "prettier": "^3.1.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.10"
   }
 }

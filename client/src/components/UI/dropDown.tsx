@@ -28,13 +28,16 @@ const DropDown: React.FC<DropDownProps> = (
       value={dropDown}
       onChange={handleDropdown}
       style={{
-        width: '200px',
+        width: '37.4vw',
+        height: '5vh',
         padding: '5px',
         margin: '10px',
         borderRadius: '5px',
         border: '1px solid #ccc',
+        top: '2px',
+        textAlign: 'left',
       }}>
-      {placeholder && <option value="">{placeholder}</option>}
+      {placeholder && <option value="dropdown">{placeholder}</option>}
       {options.map((option, index) => (
         <option key={index} value={option.value}>
           {option.label}

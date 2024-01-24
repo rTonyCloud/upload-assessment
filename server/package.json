@@ -1,7 +1,7 @@
 {
-  "name": "assessment-server",
+  "name": "skyhop-server",
   "version": "1.0.0",
-  "description": "server for assessment test",
+  "description": "assessment test for skyhop",
   "main": "server.js",
   "type": "module",
   "scripts": {

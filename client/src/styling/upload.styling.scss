@@ -1,5 +1,5 @@
 .modalContainer {
-  display: block;
+  display: flex;
   position: relative;
 }
 
@@ -9,19 +9,31 @@
   width: 100%;
 }
 
+h1 {
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 h3 {
   font-weight: 700;
-  font-size: 25px;
+  font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Roboto', sans-serif;
-}
 
- h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: left;
 }
 
+.socialDistancingRadio {
+  position: relative;
+  right: 1.2vw;
+}
 
 .uploadBtn {
   display: flex;
@@ -32,67 +44,73 @@ h1, h2, h3, h4, h5, h6, p {
   border: none;
   cursor: pointer;
   width: 5%;
-  font-size: 20px;
   border-radius: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   text-align: center;
   justify-content: center;
-  font-size: 30px;
 }
 
-hr {
+.uploadSectionText {
+  display: flex;
+  position: relative;
+  left: 5vw;
+  text-align: left;
+}
+
+HR {
   border: 0.5px solid hsl(208.7deg 16.55% 72.75%);
-  width: 25%;
+  position: relative;
+  right: 6.2vw;
+  width: 60%;
 }
 
 .modalBody {
   display: flex;
-  position: relative;
+  position: absolute;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  border: 1px solid blue;
 }
 
 .modalBodyRight {
-  display: flex;
-  position: absolute;
   flex-direction: column;
-  width: 45%;
-  height: 750px;
-  left: 56rem;
-  border: 1px solid red;
+  width: 50%;
 }
 
 #greenFonts {
-  color: rgb(5, 231, 5);
+  color: rgba(7, 172, 7, 0.842);
 }
 
 .modalBodyLeft {
-  width: 45%;
-  height: 750px;
+  width: 70%;
   border: 1px solid black;
+}
+
+.elapseData {
+  position: relative;
+  left: 4.5vw;
+}
+
+.toleranceSection {
+  position: relative;
+  left: 4.5vw;
 }
 
 .modalFooterText {
   position: absolute;
-  bottom: 25px;
-  font-size: 20px;
+  bottom: 3vh;
 }
 
 .modalFooter {
   display: flex;
-  position: fixed;
+  position: absolute;
   align-items: center;
   justify-content: center;
-  bottom: 10rem;
-  left: 0rem;
+  top: 75vh;
   width: 100%;
 }
 
 .footerBtn {
   display: flex;
-  position: relative;
+  position: absolute;
   gap: 1rem;
 }
