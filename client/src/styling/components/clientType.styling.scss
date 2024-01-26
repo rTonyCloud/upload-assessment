@@ -1,3 +1,5 @@
+@import '../breakpoints';
+
 .centerHeader {
     position: relative;
     top: 10px;
@@ -12,4 +14,25 @@ option, select {
     width: 8vw;
     text-align: center;
     border-radius: 10px;
+}
+
+@include minDesktop {
+
+
+
+    option, select {
+        position: relative;
+        top: .5vh;
+        width: 10vw;
+        font-size: .9em;
+    }
+
+    
+    #client {
+        font-size: .8em;
+    }
+
+    .testCenterSelection  {
+        font-size: .8em;
+    }
 }

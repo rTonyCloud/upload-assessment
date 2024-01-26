@@ -1,4 +1,4 @@
-import { clientData } from '../mockData/Data'
+import { testCenterClients } from '../mockData/Data'
 import useSelectClient from '../hooks/useSelectClient'
 import RadioButton from './UI/radio'
 import '../styling/components/clientType.styling.scss'
@@ -8,18 +8,18 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 const SelectClientType: React.FC = (): JSX.Element => {
   const { selectClient, handleClientTypeChange } = useSelectClient()
   return (
-    <div className="container">
-      <h4 id="client">Client:</h4>
-      <label>
+    <section className="container">
+      <h4 id="testCenter">Client:</h4>
+      <label className="radioButton">
         <RadioButton
-          name="clientType"
+          name="testCenterType"
           value="single"
           label="Single"
           checked={selectClient === 'single'}
           onChange={handleClientTypeChange}
         />
         <RadioButton
-          name="clientType"
+          name="testCenterType"
           value="multiple"
           label="Multiple"
           checked={selectClient === 'multiple'}
@@ -30,35 +30,36 @@ const SelectClientType: React.FC = (): JSX.Element => {
         <div className="testCenterSelection">
           <label>
             <h4 className="centerHeader">Testing Center 1:</h4>
-            <select defaultValue="">
-              <option value="" disabled>
+            <select defaultValue="select-test-Center">
+              <option value="select-test-Center" disabled>
                 Select Client
               </option>
-              {clientData.map((client) => (
-                <option key={client.id} value={client.id}>
-                  {client.client}
+              {testCenterClients.map((testCenter) => (
+                <option key={testCenter.id} value={testCenter.id}>
+                  {testCenter.client}
                 </option>
               ))}
             </select>
             <FontAwesomeIcon
               icon={faClock}
               size="lg"
+              className="clockIcon"
               style={{ position: 'relative', left: '10px', bottom: '.5px' }}
             />
           </label>
         </div>
       ) : (
         <div className="testCenterSelection">
-          {[1, 2, 3, 4].map((centerNumber) => (
-            <label key={centerNumber}>
-              <h4 className="centerHeader">{`Testing Center ${centerNumber}:`}</h4>
+          {[1, 2, 3, 4].map((centersNumber) => (
+            <label key={centersNumber}>
+              <h4 className="centerHeader">{`Testing Center ${centersNumber}:`}</h4>
               <select defaultValue="">
                 <option value="" disabled>
                   Select Client
                 </option>
-                {clientData.map((client) => (
-                  <option key={client.id} value={client.id}>
-                    {client.client}
+                {testCenterClients.map((testCenters) => (
+                  <option key={testCenters.id} value={testCenters.id}>
+                    {testCenters.client}
                   </option>
                 ))}
               </select>
@@ -71,7 +72,7 @@ const SelectClientType: React.FC = (): JSX.Element => {
           ))}
         </div>
       )}
-    </div>
+    </section>
   )
 }
 

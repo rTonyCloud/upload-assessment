@@ -1,4 +1,4 @@
-const clientData = [
+const testCenterClients = [
   {
     id: 1,
     client: 'Slow Testing Center',
@@ -22,4 +22,4 @@ const importOptions = [
   { label: 'Import 2', value: 'import2' },
 ]
 
-export { clientData, importOptions }
+export { testCenterClients, importOptions }

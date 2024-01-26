@@ -13,6 +13,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
   },
-  "include": ["server/server.js", "client/src/**/*"],
+  "include": ["server/server.ts", "client/src/**/*",  ],
   "exclude": ["node_modules", "dist"],
 }

@@ -1,0 +1,42 @@
+$breakpoint-mobile: 320px; // smartphones, iPhone, portrait 480x320 phones
+$breakpoint-minTablet: 481px; // portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.
+$breakpoint-portraitTablet: 641px; // portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
+$breakpoint-desktop: 961px; // tablet, landscape iPad, lo-res laptops ands desktops
+$breakpoint-minDesktop: 1025px; // big landscape tablets, laptops, and desktops
+$breakpoint-maxDesktop: 1281px; // hi-res laptops and desktops
+
+@mixin mobile {
+  @media only screen and (max-width: $breakpoint-minTablet - 1) {
+    @content;
+  }
+}
+
+@mixin minTablet {
+  @media only screen and (min-width: $breakpoint-minTablet) and (max-width: $breakpoint-portraitTablet - 1) {
+    @content;
+  }
+}
+
+@mixin portraitTablet {
+  @media only screen and (min-width: $breakpoint-portraitTablet) and (max-width: $breakpoint-desktop - 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-minDesktop - 1) {
+    @content;
+  }
+}
+
+@mixin minDesktop {
+  @media only screen and (min-width: $breakpoint-minDesktop) and (max-width: $breakpoint-maxDesktop - 1) {
+    @content;
+  }
+}
+
+@mixin maxDesktop {
+  @media only screen and (min-width: $breakpoint-maxDesktop) {
+    @content;
+  }
+}

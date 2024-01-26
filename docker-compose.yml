@@ -5,6 +5,7 @@ services:
     ports:
       - 27017:27017
     environment:
+      MONGO_INITDB_DB_NAME: ${DATABASE_NAME}
       MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
     volumes:

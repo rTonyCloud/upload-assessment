@@ -1,3 +1,5 @@
+@import './breakpoints';
+
 .modalContainer {
   display: flex;
   position: relative;
@@ -20,7 +22,6 @@ h3 {
   font-weight: 700;
   font-size: 16px;
 }
-
 
 h2,
 h3,
@@ -113,4 +114,56 @@ HR {
   display: flex;
   position: absolute;
   gap: 1rem;
+}
+
+@include minDesktop {
+  .modalWrapper {
+    position: relative;
+    bottom: 4.7vh;
+  }
+
+  .modalHeader {
+    font-size: 0.8em;
+  }
+
+  .dropdownImport {
+    font-size: 0em;
+  }
+
+  .uploadSectionText {
+    h3 {
+      font-size: 0.8em;
+    }
+  }
+
+  .elapseData {
+    font-size: 0.6em;
+  }
+
+  .toleranceSection {
+    font-size: 0.6em;
+  }
+
+  .socialDistancingSection {
+    font-size: 0.8em;
+  }
+
+  .locationSection {
+    font-size: 0.6em;
+  }
+
+  .modalFooterText {
+    h3 {
+      font-size: 0.8em;
+    }
+  }
+
+  .footerBtn {
+    Button {
+      position: relative;
+      font-size: 0.6em !important;
+      height: 4em !important;
+      bottom: 1vh !important;
+    }
+  }
 }
