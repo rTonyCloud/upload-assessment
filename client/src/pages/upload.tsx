@@ -19,10 +19,10 @@ export default function Upload() {
   const { isOpen, toggle } = useModal()
   const { selectRadio, handleDistanceChange } = useRadio()
   const { toleranceOptions, handleToggle } = useToleranceToggle()
-  const { inputRef, file, uploadFileHandler, handleDrop, handleDrag } =
-    useUpload()
+  const { inputRef, file, uploadFileHandler, handleDrop, handleDrag } = useUpload()
   return (
     <>
+    
       <Button onClick={toggle}>Upload Now</Button>
       <Modal toggle={toggle} isOpen={isOpen}>
         <button onClick={toggle} className="uploadBtn">
@@ -152,7 +152,7 @@ export default function Upload() {
                   <Button sx={{ width: '30px', height: '50px' }}>
                     Continue Import
                   </Button>
-                  <Button variant="orange">Cancel</Button>
+                  <Button variant="orange" onClick={toggle}>Cancel</Button>
                 </div>
               </section>
             </div>

@@ -13,7 +13,7 @@ const Modal: React.FC<ModalType> = (props: ModalType): JSX.Element => {
   return (
     <>
       {isOpen && (
-        <div className="modal-overlay" onClick={toggle}>
+        <div className="modalOverlay" onClick={toggle}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>{children}</div>
         </div>
       )}

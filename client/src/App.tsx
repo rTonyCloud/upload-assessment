@@ -1,4 +1,4 @@
-import './App.css'
+import './styling/App.scss'
 import Upload from './pages/upload'
 
 function App() {

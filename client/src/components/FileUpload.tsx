@@ -79,7 +79,7 @@ const FileUpload: React.FC<FileUploadProps> = (
           {selectedFile && (
             <>
               <span className="uploadFileIcon">
-                <FontAwesomeIcon icon={faFile} size="2x" />
+                <FontAwesomeIcon icon={faFile} size="2x" className='uploadIconSize' />
               </span>
               <span className="fileName">{selectedFile.name}</span>
               <span className="fileSize">
