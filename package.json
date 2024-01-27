@@ -4,7 +4,7 @@
 	"description": "An upload assessment project",
 	"main": "server/server.ts",
 	"scripts": {
-		"setup": "concurrently \"npm run install-all\" \"db:up\" \"npm run seed\" \"npm run start\"",
+		"setup": "npm run install:all && npm run db:up && npm run start",
 		"start:server": "cd server && npm run start",
 		"start:client": "cd client && npm run dev",
 		"start": "concurrently \"npm run start:server\" \"npm run start:client\"",
