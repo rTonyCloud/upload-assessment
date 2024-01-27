@@ -32,4 +32,4 @@ interface Resolvers {
 	}
 }
 
-export { Resolvers, SingleUploadMutationArgs, SingleUploadMutationResponse, UploadFile, File}
+export { Resolvers, File}
