@@ -11,7 +11,9 @@ export const API_SERVER = process.env.API_SERVER
 
 // database connection and logic
 export const DBName = process.env.DATABASE_NAME
-export const DBHost = `mongodb://localhost:27017/${DBName}`
+export const DBUser = process.env.DATABASE_USER
+export const DBPass = process.env.DATABASE_PASSWORD
+export const DBHost = `mongodb://${DBUser}:${DBPass}@localhost:27017/${DBName}?authSource=admin`
 
 // file upload
 export const UPLOAD_PATH = 'uploads/'

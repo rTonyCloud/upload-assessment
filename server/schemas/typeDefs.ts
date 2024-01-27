@@ -6,7 +6,7 @@ const typeDefs = gql`
 	type File {
 		filename: String!
 		mimetype: String!
-		fileData: String!
+		encoding: String!
 		url: String!
 		createdAt: String!
 	}

@@ -6,7 +6,7 @@ import express from 'express'
 import cors from 'cors'
 import { PORT, API_SERVER, corsOptions, MAX_FILE_SIZE, MAX_FILES } from './helper/dotEnv'
 const { ApolloServerPluginLandingPageLocalDefault } = require('apollo-server-core')
-const { GraphQLUpload, graphqlUploadExpress } = require('graphql-upload')
+const { graphqlUploadExpress } = require('graphql-upload')
 async function startApolloServer(typeDefs: any, resolvers: {}) {
 	const app = express()
 
@@ -15,6 +15,7 @@ async function startApolloServer(typeDefs: any, resolvers: {}) {
 	app.use(cors(corsOptions))
 
 	app.use(graphqlUploadExpress({ maxFileSize: MAX_FILE_SIZE, maxFiles: MAX_FILES }))
+	app.use('/uploads', express.static('/server/uploads'))
 
 	// mongoose connection
 	ConnectDB()
