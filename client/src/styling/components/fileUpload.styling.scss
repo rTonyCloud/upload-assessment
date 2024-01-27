@@ -1,114 +1,111 @@
 @import '../breakpoints';
 
 .fileUploadContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  border: 1px solid rgba(128, 128, 128, 0.373);
-  border-radius: 15px;
-  width: 37.5vw;
-  height: 30vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	border: 1px solid rgba(128, 128, 128, 0.373);
+	border-radius: 15px;
+	width: 37.5vw;
+	height: 30vh;
 }
 
 .fileUploadContainerText {
-  border: 5px dashed rgba(128, 128, 128, 0.352);
-  border-radius: 20px;
-  height: 20vh;
-  width: 33.5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+	border: 5px dashed rgba(128, 128, 128, 0.352);
+	border-radius: 20px;
+	height: 20vh;
+	width: 33.5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 Button {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .fileIcon {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	align-items: center;
 }
 .FileIcon {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  align-items: center;
-  top: 5vh;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	align-items: center;
+	top: 5vh;
 }
 
 .uploadFileIcon {
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  align-items: center;
-  left: 7.5vw;
-  top: 0vh;
+	display: flex;
+	justify-content: flex-start;
+	position: relative;
+	align-items: center;
+	left: 7.5vw;
+	top: 0vh;
 }
 
-
 .fileName {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  align-items: center;
-  left: 10.5vw;
-  bottom: 21.5vh;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	align-items: center;
+	left: 10.5vw;
+	bottom: 21.5vh;
 }
 
 .fileSize {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  left: -5vw;
-  right: 0;
-  bottom: 21.5vh;
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	left: -5vw;
+	right: 0;
+	bottom: 21.5vh;
 }
 
 .browse {
-  font-weight: 900 !important;
-  cursor: pointer;
+	font-weight: 900 !important;
+	cursor: pointer;
 }
 
 @include minDesktop {
-  
-  .fileUploadContainer > Button {
-    display: flex;
-    height: 2em !important;
-    font-size: 1em !important;
-    justify-content: center;
-    align-items: center;
-  }
+	.fileUploadContainer > Button {
+		display: flex;
+		height: 2em !important;
+		font-size: 1em !important;
+		justify-content: center;
+		align-items: center;
+	}
 
-  .FileIcon {
-    position: absolute;
-    top: 3vh !important;
-    font-size: 2em;
-  }
+	.FileIcon {
+		position: absolute;
+		top: 3vh !important;
+		font-size: 2em;
+	}
 
-  HR {
-    position: relative;
-    top: 1vh;
-    width: 30vw;
-  
-  }
+	HR {
+		position: relative;
+		top: 1vh;
+		width: 30vw;
+	}
 
-  .fileName {
-    position: absolute;
-    font-size: .8em;
-    top: 49vh;
-  }
-  
-  .uploadIconSize {
-    font-size: 1em;
-    position: relative;
-    top: 1vh;
-  }
+	.fileName {
+		position: absolute;
+		font-size: 0.8em;
+		top: 49vh;
+	}
+
+	.uploadIconSize {
+		font-size: 1em;
+		position: relative;
+		top: 1vh;
+	}
 }
