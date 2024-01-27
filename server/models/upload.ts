@@ -1,14 +1,21 @@
-import mongoose from 'mongoose';
-import { IFile } from '../interfaces/uploadInterface';
+import mongoose, { Schema, Document } from 'mongoose'
 
+interface IFile extends Document {
+	filename: string
+	mimetype: string
+	encoding: string
+	url: string
+	createdAt: Date
+}
 
-const fileSchema = new mongoose.Schema<IFile>({
-    filename: {type: String, required: true},
-    mimetype: {type: String, required: true},
-    fileData: {type: Buffer, required: true},
-    path: {type: String, required: true}
-});
+const FileSchema: Schema<IFile> = new mongoose.Schema({
+	filename: { type: String, required: true },
+	mimetype: { type: String, required: true },
+	encoding: { type: String, required: true },
+	url: { type: String, required: true },
+	createdAt: { type: Date, default: Date.now },
+})
 
-const FileModel = mongoose.model('FileModel', fileSchema);
+const FileModel = mongoose.model<IFile>('uploadedFiles', FileSchema)
 
-export default FileModel;
+export default FileModel

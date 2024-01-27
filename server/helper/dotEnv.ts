@@ -3,11 +3,11 @@ const dotenv = require('dotenv')
 dotenv.config({ path: '../.env' })
 
 export const corsOptions = {
-	origin: 'http://example.com', // Replace with your frontend's URL
+	origin: 'http://localhost:3000',
 	credentials: true, // Allows cookies to be sent
 }
 export const PORT = process.env.PORT
-export const LOCALHOST_SERVER = process.env.LOCALHOST_SERVER
+export const API_SERVER = process.env.API_SERVER
 
 // database connection and logic
 export const DBName = process.env.DATABASE_NAME

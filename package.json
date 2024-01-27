@@ -4,15 +4,19 @@
 	"description": "An upload assessment project",
 	"main": "server/server.ts",
 	"scripts": {
+		"setup": "concurrently \"npm run install-all\" \"db:up\" \"npm run seed\" \"npm run start\"",
 		"start:server": "cd server && npm run start",
 		"start:client": "cd client && npm run dev",
-		"start": "concurrently \"npm run start:server\" \"npm run start:client\" \"npm run db:up\"",
+		"start": "concurrently \"npm run start:server\" \"npm run start:client\"",
 		"develop": "concurrently \"cd server && npm run watch\" \"npm run start:client\"",
-		"install": "cd server && npm i && cd ../client && npm i",
+		"install:root": "npm install",
+		"install:server": "cd server && npm install",
+		"install:client": "cd client && npm install",
+		"install-all": "npm run install:root && npm run install:server && npm run install:client",
 		"seed": "cd server && npm run seed",
 		"build": "cd client && tsc && vite build",
-		"lint": "concurrently \"cd server && npm run lint\" \"cd ../client && npm run lint\"",
-		"format": "concurrently \"cd server && npm run format\" \"cd ../client && npm run format\"",
+		"lint": "concurrently \"cd server && npm run lint\" \"cd client && npm run lint\"",
+		"format": "concurrently \"cd server && npm run format\" \"cd client && npm run format\"",
 		"db:up": "docker-compose -p upload-assessment up -d db",
 		"db:down": "docker-compose down"
 	},
@@ -24,5 +28,6 @@
 		"concurrently": "^8.2.2",
 		"prettier": "^3.1.1"
 	},
-	"dependencies": {}
+	"dependencies": {
+	}
 }

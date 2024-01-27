@@ -1,45 +1,71 @@
-// Other imports...
-// const { GraphQLUpload } = require('graphql-upload/graphqlUploadExpress.mjs')
-// const FileModel = require('../models/upload')
+import { finished } from 'stream/promises'
+import FileModel from '../models/upload'
+import fs from 'fs'
+import path from 'path'
+// @ts-ignore
+import { GraphQLUpload } from 'graphql-upload'
 
-// Remove the existing declaration of 'resolvers'
-// const resolvers = {
-
-export const resolvers: any = {
-
-// 	Upload: GraphQLUpload,
-
-// 	Mutation: {
-// 		uploadFile: async (_: any, { file }: { file: Promise<any> }) => {
-// 			const { createReadStream, filename, mimetype } = await file
-
-// 			const allowedMimeTypes = ['application/pdf', 'application/msword']
-
-// 			if (!allowedMimeTypes.includes(mimetype)) {
-// 				throw new Error('File type not allowed.')
-// 			}
-
-// 			const stream = createReadStream()
-// 			const buffer = await streamToBuffer(stream)
-
-// 			const uploadedFile = await File.create({
-// 				filename,
-// 				mimetype,
-// 				fileData: buffer,
-// 			})
-
-// 			return uploadedFile
-// 		},
-// 	},
-// }
-
-// function streamToBuffer(stream: any) {
-// 	return new Promise((resolve, reject) => {
-// 		const chunks: Buffer[] = []
-// 		stream.on('data', (chunk: Buffer) => chunks.push(chunk))
-// 		stream.on('end', () => resolve(Buffer.concat(chunks)))
-// 		stream.on('error', reject)
-// 	})
+interface File {
+	filename: string
+	mimetype: string
+	encoding: string
+	createReadStream: () => NodeJS.ReadableStream
 }
 
-module.exports = resolvers
+interface SingleUploadMutationArgs {
+	file: Promise<File>
+}
+
+interface SingleUploadMutationResponse {
+	filename: string
+	mimetype: string
+	encoding: string
+	url: string
+	createdAt: Date
+}
+
+interface Resolvers {
+	Upload: GraphQLUpload
+	Mutation: {
+		singleUpload: (
+			parent: any,
+			args: SingleUploadMutationArgs,
+		) => Promise<SingleUploadMutationResponse>
+	}
+}
+
+const resolvers: Resolvers = {
+	Upload: GraphQLUpload,
+	Mutation: {
+		singleUpload: async (parent, args) => {
+			const { file } = args
+			const { createReadStream, filename, mimetype, encoding } = await file
+
+			const uploadPath = path.join(__dirname, '/uploads', filename)
+
+			const out = fs.createWriteStream(uploadPath)
+			const stream = createReadStream()
+			stream.pipe(out)
+			await finished(out)
+
+			const fileData = new FileModel({
+				filename,
+				mimetype,
+				encoding,
+				url: uploadPath, // Adjust as needed for your URL structure
+				createdAt: new Date(),
+			})
+			await fileData.save()
+
+			return {
+				filename: fileData.filename,
+				mimetype: fileData.mimetype,
+				encoding: fileData.encoding,
+				url: fileData.url,
+				createdAt: fileData.createdAt,
+			}
+		},
+	},
+}
+
+export { resolvers }

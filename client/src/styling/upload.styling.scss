@@ -1,26 +1,26 @@
 @import './breakpoints';
 
 .modalContainer {
-  display: flex;
-  position: relative;
+	display: flex;
+	position: relative;
 }
 
 .modalWrapper {
-  position: absolute;
-  flex-direction: column;
-  width: 100%;
+	position: absolute;
+	flex-direction: column;
+	width: 100%;
 }
 
 h1 {
-  font-weight: 700;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 h3 {
-  font-weight: 700;
-  font-size: 16px;
+	font-weight: 700;
+	font-size: 16px;
 }
 
 h2,
@@ -28,142 +28,142 @@ h3,
 h4,
 h5,
 h6 {
-  text-align: left;
+	text-align: left;
 }
 
 .socialDistancingRadio {
-  position: relative;
-  right: 1.2vw;
+	position: relative;
+	right: 1.2vw;
 }
 
 .uploadBtn {
-  display: flex;
-  position: relative;
-  background-color: hsl(222.65deg 89.25% 18.24%);
-  color: white;
-  padding: 15px;
-  border: none;
-  cursor: pointer;
-  width: 5%;
-  border-radius: 15px;
-  text-align: center;
-  justify-content: center;
+	display: flex;
+	position: relative;
+	background-color: hsl(222.65deg 89.25% 18.24%);
+	color: white;
+	padding: 15px;
+	border: none;
+	cursor: pointer;
+	width: 5%;
+	border-radius: 15px;
+	text-align: center;
+	justify-content: center;
 }
 
 .uploadSectionText {
-  display: flex;
-  position: relative;
-  left: 5vw;
-  text-align: left;
+	display: flex;
+	position: relative;
+	left: 5vw;
+	text-align: left;
 }
 
 HR {
-  border: 0.5px solid hsl(208.7deg 16.55% 72.75%);
-  position: relative;
-  right: 6.2vw;
-  width: 60%;
+	border: 0.5px solid hsl(208.7deg 16.55% 72.75%);
+	position: relative;
+	right: 6.2vw;
+	width: 60%;
 }
 
 .modalBody {
-  display: flex;
-  position: absolute;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+	display: flex;
+	position: absolute;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
 }
 
 .modalBodyRight {
-  flex-direction: column;
-  width: 50%;
+	flex-direction: column;
+	width: 50%;
 }
 
 #greenFonts {
-  color: rgba(7, 172, 7, 0.842);
+	color: rgba(7, 172, 7, 0.842);
 }
 
 .modalBodyLeft {
-  width: 70%;
+	width: 70%;
 }
 
 .elapseData {
-  position: relative;
-  left: 4.5vw;
+	position: relative;
+	left: 4.5vw;
 }
 
 .toleranceSection {
-  position: relative;
-  left: 4.5vw;
-  bottom: 2vh;
+	position: relative;
+	left: 4.5vw;
+	bottom: 2vh;
 }
 
 .modalFooterText {
-  position: absolute;
-  bottom: 3vh;
+	position: absolute;
+	bottom: 3vh;
 }
 
 .modalFooter {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  top: 75vh;
-  width: 100%;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	top: 75vh;
+	width: 100%;
 }
 
 .footerBtn {
-  display: flex;
-  position: absolute;
-  gap: 1rem;
+	display: flex;
+	position: absolute;
+	gap: 1rem;
 }
 
 @include minDesktop {
-  .modalWrapper {
-    position: relative;
-    bottom: 4.7vh;
-  }
+	.modalWrapper {
+		position: relative;
+		bottom: 4.7vh;
+	}
 
-  .modalHeader {
-    font-size: 0.8em;
-  }
+	.modalHeader {
+		font-size: 0.8em;
+	}
 
-  .dropdownImport {
-    font-size: 0em;
-  }
+	.dropdownImport {
+		font-size: 0em;
+	}
 
-  .uploadSectionText {
-    h3 {
-      font-size: 0.8em;
-    }
-  }
+	.uploadSectionText {
+		h3 {
+			font-size: 0.8em;
+		}
+	}
 
-  .elapseData {
-    font-size: 0.6em;
-  }
+	.elapseData {
+		font-size: 0.6em;
+	}
 
-  .toleranceSection {
-    font-size: 0.6em;
-  }
+	.toleranceSection {
+		font-size: 0.6em;
+	}
 
-  .socialDistancingSection {
-    font-size: 0.8em;
-  }
+	.socialDistancingSection {
+		font-size: 0.8em;
+	}
 
-  .locationSection {
-    font-size: 0.6em;
-  }
+	.locationSection {
+		font-size: 0.6em;
+	}
 
-  .modalFooterText {
-    h3 {
-      font-size: 0.8em;
-    }
-  }
+	.modalFooterText {
+		h3 {
+			font-size: 0.8em;
+		}
+	}
 
-  .footerBtn {
-    Button {
-      position: relative;
-      font-size: 0.6em !important;
-      height: 4em !important;
-      bottom: 1vh !important;
-    }
-  }
+	.footerBtn {
+		Button {
+			position: relative;
+			font-size: 0.6em !important;
+			height: 4em !important;
+			bottom: 1vh !important;
+		}
+	}
 }

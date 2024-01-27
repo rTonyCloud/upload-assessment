@@ -2,11 +2,11 @@ import './styling/App.scss'
 import Upload from './pages/upload'
 
 function App() {
-  return (
-    <>
-      <Upload />
-    </>
-  )
+	return (
+		<>
+			<Upload />
+		</>
+	)
 }
 
 export default App

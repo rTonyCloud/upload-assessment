@@ -1,8 +1,23 @@
 const { gql } = require('apollo-server-express')
 
-export const typeDefs = gql`
-  type Query {
-    hello: String
-  }
+const typeDefs = gql`
+	scalar Upload
+
+	type File {
+		filename: String!
+		mimetype: String!
+		fileData: String!
+		url: String!
+		createdAt: String!
+	}
+
+	type Query {
+		uploads: [File]
+	}
+
+	type Mutation {
+		singleUpload(file: Upload!): File!
+	}
 `
-module.exports = { typeDefs }
+
+export { typeDefs }

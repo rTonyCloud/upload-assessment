@@ -1,14 +1,14 @@
 import React from 'react'
 
 export default function useModal() {
-  const [isOpen, setIsOpen] = React.useState(false)
+	const [isOpen, setIsOpen] = React.useState(false)
 
-  const toggle = () => {
-    setIsOpen(!isOpen)
-  }
+	const toggle = () => {
+		setIsOpen(!isOpen)
+	}
 
-  return {
-    isOpen,
-    toggle,
-  }
+	return {
+		isOpen,
+		toggle,
+	}
 }
