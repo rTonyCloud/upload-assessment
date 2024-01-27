@@ -12,7 +12,7 @@
 		"install:root": "npm install",
 		"install:server": "cd server && npm install",
 		"install:client": "cd client && npm install",
-		"install-all": "npm run install:root && npm run install:server && npm run install:client",
+		"install:all": "npm run install:root && npm run install:server && npm run install:client",
 		"seed": "cd server && npm run seed",
 		"build": "cd client && tsc && vite build",
 		"lint": "concurrently \"cd server && npm run lint\" \"cd client && npm run lint\"",

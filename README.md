@@ -21,7 +21,11 @@ https://github.com/rTonyCloud/upload-assessment
 An app to upload documentation within a modal
 
 ## Installation
-you can run the app with npm run start that will be running both client, server and docker, or you can run the client with npm run start:client
+You must have docker installed on your machine https://www.docker.com/
+convert .env.example to .env
+Install dependencies - npm run install:all 
+Setup the application - npm run setup - this will build the entire application and run it on port 4000
+To run the application - npm run start
 
 ## usage
 you can run npm install to install all dependencies on all repos
