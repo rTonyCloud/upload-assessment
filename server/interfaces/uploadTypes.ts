@@ -1,7 +1,6 @@
 // @ts-ignore
 import { GraphQLUpload } from 'graphql-upload'
 
-
 interface File {
 	filename: string
 	mimetype: string
@@ -32,4 +31,4 @@ interface Resolvers {
 	}
 }
 
-export { Resolvers, File}
+export { Resolvers, File }

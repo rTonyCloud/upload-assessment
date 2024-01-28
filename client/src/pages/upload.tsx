@@ -19,7 +19,8 @@ export default function Upload() {
 	const { isOpen, toggle } = useModal()
 	const { selectRadio, handleDistanceChange } = useRadio()
 	const { toleranceOptions, handleToggle } = useToleranceToggle()
-	const { inputRef, file, uploadFileHandler, handleDrop, handleDrag } = useUpload()
+	const { inputRef, file, uploadFileHandler, handleDrop, handleDrag, handleDragLeave, isDrag } =
+		useUpload()
 	return (
 		<>
 			<Button onClick={toggle}>Upload Now</Button>
@@ -66,6 +67,9 @@ export default function Upload() {
 										handleDragOver={handleDrag}
 										handleDrop={handleDrop}
 										uploadRef={inputRef}
+										handleDragLeave={handleDragLeave}
+										isDrag={isDrag}
+
 									/>
 								</div>
 								<HR

@@ -2,7 +2,7 @@ const { ApolloServer } = require('apollo-server-express')
 import { typeDefs } from './schemas/typeDefs'
 import { resolvers } from './schemas/resolvers'
 import { ConnectDB } from './config/connection'
-//@ts-ignore 
+//@ts-ignore
 import express from 'express'
 //@ts-ignore
 import cors from 'cors'

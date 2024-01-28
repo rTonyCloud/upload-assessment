@@ -46,7 +46,7 @@ const resolvers: Resolvers = {
 				createdAt: new Date(),
 			})
 			await fileData.save()
-			console.log(`File saved to MongoDB: ${fileData.filename}`);
+			console.log(`File saved to MongoDB: ${fileData.filename}`)
 			return {
 				filename: fileData.filename,
 				mimetype: fileData.mimetype,
