@@ -1,7 +1,4 @@
-interface HRProps {
-	className?: string
-	style?: React.CSSProperties
-}
+import { HRProps } from '../../types/components/hrInterface'
 
 const HR: React.FC<HRProps> = (props: HRProps): JSX.Element => {
 	const { className, style } = props

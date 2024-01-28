@@ -40,6 +40,15 @@ export default function useUpload() {
 		setIsDrag(true)
 	}, [])
 
+	const resetUploadState = () => {
+		setFile(null)
+		setIsDrag(false)
+		// Ensure the input is cleared as well
+		if (inputRef.current) {
+			inputRef.current.value = ''
+		}
+	}
+
 	return {
 		inputRef,
 		file,
@@ -48,6 +57,7 @@ export default function useUpload() {
 		handleDrag,
 		isDrag,
 		handleDragLeave,
-		handleDragOver
+		handleDragOver,
+		resetUploadState,
 	}
 }

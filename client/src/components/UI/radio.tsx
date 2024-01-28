@@ -1,11 +1,5 @@
 import '../../styling/components/UI/radio.styling.scss'
-interface RadioButtonProps {
-	name: string
-	value: string
-	label: React.ReactNode
-	checked: boolean
-	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-}
+import { RadioButtonProps } from '../../types/components/radioButtonInterface'
 
 const RadioButton: React.FC<RadioButtonProps> = (props: RadioButtonProps): JSX.Element => {
 	const { name, value, label, checked, onChange } = props

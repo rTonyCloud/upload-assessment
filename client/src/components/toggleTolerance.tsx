@@ -2,10 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import '../styling/toggleTolerance.styling.scss'
-interface ToggleProps {
-	onToggle: (isOn: boolean, toleranceLevel?: string) => void
-	toleranceOptions?: string[]
-}
+import { ToggleProps } from '../types/toggleInterface'
 
 const Toggle: React.FC<ToggleProps> = (props: ToggleProps): JSX.Element => {
 	const { onToggle, toleranceOptions } = props

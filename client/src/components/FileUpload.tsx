@@ -1,31 +1,12 @@
 import React from 'react'
 import Button from './UI/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
+import { faFile, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import '../styling/components/fileUpload.styling.scss'
 import HR from './UI/hr'
 import { useMutation } from '@apollo/client'
-import { gql } from '@apollo/client'
-type FileUploadProps = {
-	isDrag: boolean
-	selectedFile: File | null
-	handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-	handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void
-	handleDrop: (e: React.DragEvent<HTMLDivElement>) => void
-	uploadRef?: React.RefObject<HTMLInputElement>
-	handleDragLeave: (e: React.DragEvent<HTMLDivElement>) => void
-}
-
-const uploadFiles = gql`
-	mutation SingleUpload($file: Upload!) {
-		singleUpload(file: $file) {
-			filename
-			mimetype
-			encoding
-			createdAt
-		}
-	}
-`
+import { uploadFiles } from '../graphql/singleUpload'
+import { FileUploadProps } from '../types/uploadInterface'
 
 const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Element => {
 	const {
@@ -37,14 +18,13 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 		handleDragLeave,
 		handleDragOver,
 	} = props
-
+	const [uploadSuccess, setUploadSuccess] = React.useState<boolean>(false)
 	const [uploadFile] = useMutation(uploadFiles)
 
 	const handleBrowse = () => {
-		console.log("handleBrowse called")
+		console.log('handleBrowse called')
 		uploadRef?.current?.click()
 	}
-
 
 	const handleUploadButtonClick = async () => {
 		if (!selectedFile) {
@@ -58,9 +38,11 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 					file: selectedFile,
 				},
 			})
+			setUploadSuccess(true)
 			console.log('file upload response', response)
 		} catch (error) {
 			console.error('Error uploading file', error)
+			setUploadSuccess(false)
 		}
 	}
 
@@ -119,33 +101,30 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 			</div>
 			<div className="fileUploadResult">
 				<HR
-					style={{
-						width: '80%',
-						backgroundColor: '#aebac5',
-						position: 'relative',
-						right: '0',
-					}}
+					style={{ width: '80%', backgroundColor: '#aebac5', position: 'relative', right: '0' }}
 				/>
 				<div className="fileUploadResultText">
-					{selectedFile && (
-						<>
-							<span className="uploadFileIcon">
-								<FontAwesomeIcon icon={faFile} size="2x" className="uploadIconSize" />
-							</span>
-							<span className="fileName">{selectedFile.name}</span>
-							<span className="fileSize">
-								{(selectedFile.size / 1024 / 1024).toFixed(2)}MB / 16MB
-							</span>
-						</>
+					{uploadSuccess ? (
+						<div className="uploadSuccess">
+							<FontAwesomeIcon icon={faCheckCircle} size="lg" style={{ color: 'green' }} />
+							<span>Upload Successful!</span>
+						</div>
+					) : (
+						selectedFile && (
+							<>
+								<span className="uploadFileIcon">
+									<FontAwesomeIcon icon={faFile} size="2x" className="uploadIconSize" />
+								</span>
+								<span className="fileName">{selectedFile.name}</span>
+								<span className="fileSize">
+									{(selectedFile.size / 1024 / 1024).toFixed(2)}MB / 16MB
+								</span>
+							</>
+						)
 					)}
 				</div>
 				<HR
-					style={{
-						width: '80%',
-						backgroundColor: '#aebac5',
-						position: 'relative',
-						right: '0',
-					}}
+					style={{ width: '80%', backgroundColor: '#aebac5', position: 'relative', right: '0' }}
 				/>
 			</div>
 		</section>

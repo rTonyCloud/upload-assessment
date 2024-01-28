@@ -1,11 +1,4 @@
-interface ButtonProps {
-	variant?: 'blue' | 'orange'
-	disabled?: boolean
-	sx?: React.CSSProperties
-	type?: 'button' | 'submit' | undefined
-	onClick?: () => void
-	children: React.ReactNode
-}
+import { ButtonProps } from '../../types/components/buttonInterface'
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
 	const { children, variant, sx, onClick, disabled, type } = props
