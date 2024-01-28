@@ -1,16 +1,4 @@
 @import './breakpoints';
-
-.modalContainer {
-	display: flex;
-	position: relative;
-}
-
-.modalWrapper {
-	position: absolute;
-	flex-direction: column;
-	width: 100%;
-}
-
 h1 {
 	font-weight: 700;
 	text-align: center;
@@ -31,23 +19,108 @@ h6 {
 	text-align: left;
 }
 
-.socialDistancingRadio {
+HR {
+	border: 0.5px solid hsl(208.7deg 16.55% 72.75%);
 	position: relative;
-	right: 1.2vw;
+	right: 6.2vw;
+	width: 60%;
 }
 
-.uploadBtn {
+#greenFonts {
+	color: rgba(7, 172, 7, 0.842);
+}
+
+.modalContainer {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+}
+
+.modalWrapper {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+}
+
+.modalBody {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: absolute;
+	top: 1.8vh;
+}
+
+.modalBodyRight {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 30vw;
+}
+
+.modalHeader {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	position: relative;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+	bottom: 8vh;
+}
+
+.modalBodyLeft {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 45vw;
+}
+
+.socialDistancingSection {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 55.5%;
+
+	.socialDistancingRadio {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		right: .6vw;
+	}
+}
+.socialDistancingRadio {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.clientSection {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.closeBtn {
 	display: flex;
 	position: relative;
 	background-color: hsl(222.65deg 89.25% 18.24%);
 	color: white;
 	padding: 15px;
-	border: none;
 	cursor: pointer;
-	width: 5%;
 	border-radius: 15px;
 	text-align: center;
-	justify-content: center;
+	justify-content: flex-end;
+}
+
+.closeBody {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	justify-content: flex-end;
+	bottom: 1.5vh;
+	left: 1vw;
 }
 
 .uploadSectionText {
@@ -57,57 +130,17 @@ h6 {
 	text-align: left;
 }
 
-HR {
-	border: 0.5px solid hsl(208.7deg 16.55% 72.75%);
-	position: relative;
-	right: 6.2vw;
-	width: 60%;
-}
-
-.modalBody {
-	display: flex;
-	position: absolute;
-	flex-direction: row;
-	justify-content: center;
-	width: 100%;
-}
-
-.modalBodyRight {
-	flex-direction: column;
-	width: 50%;
-}
-
-#greenFonts {
-	color: rgba(7, 172, 7, 0.842);
-}
-
-.modalBodyLeft {
-	width: 70%;
-}
-
 .elapseData {
 	position: relative;
 	left: 4.5vw;
 }
 
 .toleranceSection {
+	display: flex;
+	flex-direction: row;
 	position: relative;
 	left: 4.5vw;
 	bottom: 2vh;
-}
-
-.modalFooterText {
-	position: absolute;
-	bottom: 3vh;
-}
-
-.modalFooter {
-	display: flex;
-	position: absolute;
-	align-items: center;
-	justify-content: center;
-	top: 75vh;
-	width: 100%;
 }
 
 .footerBtn {

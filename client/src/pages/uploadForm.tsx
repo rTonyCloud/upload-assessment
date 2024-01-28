@@ -41,41 +41,41 @@ export default function Upload() {
 		<>
 			<Button onClick={toggle}>Upload Now</Button>
 			<Modal toggle={toggle} isOpen={isOpen}>
-				<button onClick={toggle} className="uploadBtn">
+
+				<button onClick={toggle} className="closeBtn closeBody">
 					<FontAwesomeIcon icon={faX} />
 				</button>
-
 				{submissionStatus ? (
 					<div className="thankYouMessage">
 						<h1>Thank You!</h1>
 						<p>Your submission has been received.</p>
 					</div>
 				) : (
-					<div className="modalContainer">
+					<form className="modalContainer">
 						<div className="modalWrapper">
-							<div className="modalHeader">
-								<h1>Document Upload</h1>
-								<HR
-									style={{
-										width: '30%',
-										height: '.5px',
-										left: '.1vw',
-										backgroundColor: '#aebac5',
-									}}
-								/>
-							</div>
+								<div className="modalHeader">
+									<h1>Document Upload</h1>
+									<HR
+										style={{
+											width: '50%',
+											height: '.01vh',
+											left: '.1vw',
+											backgroundColor: '#aebac5',
+										}}
+									/>
+								</div>
 							<div className="modalBody">
 								<section className="modalBodyLeft">
 									<div className="dropdownImport">
 										<DropDown
 											placeholder="Select Import Name:"
-											onSelect={() => {}}
+											onSelect={() => importOptions}
 											options={importOptions}
 										/>
 										<HR
 											style={{
-												width: '53%',
-												height: '.5px',
+												width: '54%',
+												height: '.01vh',
 												backgroundColor: '#aebac5',
 											}}
 										/>
@@ -140,9 +140,9 @@ export default function Upload() {
 										</div>
 										<HR
 											style={{
-												width: '60%',
+												width: '100%',
 												top: '1.5vh',
-												right: '6.6vw',
+												right: '0vw',
 												backgroundColor: '#e0e8eff5',
 											}}
 										/>
@@ -152,7 +152,7 @@ export default function Upload() {
 										<h4 id="greenFonts">All Available!</h4>
 										<HR
 											style={{
-												width: '60%',
+												width: '55.5%',
 												bottom: '1.5vh',
 												right: '6.6vw',
 												backgroundColor: '#e0e8eff5',
@@ -178,7 +178,7 @@ export default function Upload() {
 								</section>
 							</div>
 						</div>
-					</div>
+					</form>
 				)}
 			</Modal>
 		</>

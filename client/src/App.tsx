@@ -1,10 +1,10 @@
 import './styling/App.scss'
-import Upload from './pages/upload'
+import UploadForm from './pages/uploadForm'
 
 function App() {
 	return (
 		<>
-			<Upload />
+			<UploadForm />
 		</>
 	)
 }

@@ -2,17 +2,32 @@
 
 .centerHeader {
 	position: relative;
-	top: 10px;
-	margin-bottom: -10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
 	text-align: left;
 	font-weight: 300;
 }
 
-option,
+label {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	text-align: left;
+	font-weight: 300;
+	gap: 1rem;
+}
+
+
 select {
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	bottom: 1px;
-	width: 8vw;
 	text-align: center;
 	border-radius: 10px;
 }
@@ -22,7 +37,7 @@ select {
 	select {
 		position: relative;
 		top: 0.5vh;
-		width: 10vw;
+		width: 8vw;
 		font-size: 0.9em;
 	}
 
