@@ -1,15 +1,5 @@
 import React, { ChangeEvent } from 'react'
-
-interface DropDownProps {
-	onSelect: (value: string) => void
-	placeholder?: string
-	options: DropdownOption[]
-}
-
-interface DropdownOption {
-	value: string
-	label: string
-}
+import { DropDownProps } from '../../types/components/dropDownInterface'
 
 const DropDown: React.FC<DropDownProps> = (props: DropDownProps): JSX.Element => {
 	const { onSelect, placeholder, options } = props

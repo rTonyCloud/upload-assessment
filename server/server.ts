@@ -24,8 +24,7 @@ async function startApolloServer(typeDefs: any, resolvers: {}) {
 	const server = new ApolloServer({
 		typeDefs,
 		resolvers,
-		csrfPrevention: true,
-		cache: 'bounded',
+		csrfPrevention: false,
 		plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
 	})
 

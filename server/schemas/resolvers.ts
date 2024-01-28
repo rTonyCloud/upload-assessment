@@ -52,6 +52,7 @@ const resolvers: Resolvers = {
 				mimetype: fileData.mimetype,
 				encoding: fileData.encoding,
 				createdAt: fileData.createdAt,
+				data: fileData.data,
 			}
 		},
 	},

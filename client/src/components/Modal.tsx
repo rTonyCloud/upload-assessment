@@ -1,11 +1,6 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import '../styling/components/modal.styling.scss'
-
-interface ModalType {
-	children?: ReactNode | ReactNode[]
-	isOpen: boolean
-	toggle: () => void
-}
+import { ModalType } from '../types/modaInterface'
 
 const Modal: React.FC<ModalType> = (props: ModalType): JSX.Element => {
 	const { children, isOpen, toggle } = props

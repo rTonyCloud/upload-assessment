@@ -1,4 +1,4 @@
-import { testCenterClients } from '../mockData/Data'
+import { testCenterClients } from '../data/Data'
 import useSelectClient from '../hooks/useSelectClient'
 import RadioButton from './UI/radio'
 import '../styling/components/clientType.styling.scss'
