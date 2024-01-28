@@ -3,6 +3,6 @@ export interface ButtonProps {
 	disabled?: boolean
 	sx?: React.CSSProperties
 	type?: 'button' | 'submit' | undefined
-	onClick?: () => void
+	onClick?: React.MouseEventHandler<HTMLButtonElement>
 	children: React.ReactNode
 }

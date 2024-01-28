@@ -1,31 +1,29 @@
 @import '../../breakpoints';
 
 .radioContainer {
-	display: inline-block;
-	right: 12vw;
+	display: flex;
 	position: relative;
-	padding-left: 10px;
-	cursor: pointer;
+	flex-direction: row;
 	font-size: 16px;
 	user-select: none;
+	align-items: center;
 
 	input {
 		height: 30px;
 		width: 30px;
-		color: blueviolet;
+		cursor: pointer;
 	}
 }
 
 .radioLabel {
+	display: flex;
 	position: relative;
-	bottom: 10px;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 }
 
 @include minDesktop {
 	.radioContainer {
-		right: 9vw;
 		font-size: 0.8em;
 
 		input {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './UI/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFile, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faFile, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import '../styling/components/fileUpload.styling.scss'
 import HR from './UI/hr'
 import { useMutation } from '@apollo/client'
@@ -18,17 +18,30 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 		handleDragLeave,
 		handleDragOver,
 	} = props
-	const [uploadSuccess, setUploadSuccess] = React.useState<boolean>(false)
+	const [uploadStatus, setUploadStatus] = React.useState({
+		success: false,
+		error: false,
+		message: '',
+	})
 	const [uploadFile] = useMutation(uploadFiles)
+	const MAX_FILE_SIZE_MB = 16
 
-	const handleBrowse = () => {
-		console.log('handleBrowse called')
-		uploadRef?.current?.click()
-	}
+	const handleBrowse = () => uploadRef?.current?.click()
 
-	const handleUploadButtonClick = async () => {
+	const handleUploadButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault()
 		if (!selectedFile) {
 			console.log('No file selected')
+			return
+		}
+
+		const fileSizeMB = selectedFile.size / 1024 / 1024
+		if (fileSizeMB > MAX_FILE_SIZE_MB) {
+			setUploadStatus({
+				success: false,
+				error: true,
+				message: `File size (${fileSizeMB.toFixed(2)}MB) exceeds the limit of ${MAX_FILE_SIZE_MB}MB`,
+			})
 			return
 		}
 
@@ -38,11 +51,11 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 					file: selectedFile,
 				},
 			})
-			setUploadSuccess(true)
+			setUploadStatus({ success: true, error: false, message: 'Upload Successful!' })
 			console.log('file upload response', response)
 		} catch (error) {
 			console.error('Error uploading file', error)
-			setUploadSuccess(false)
+			setUploadStatus({ success: false, error: true, message: 'Upload Failed!' })
 		}
 	}
 
@@ -56,7 +69,7 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 			>
 				{selectedFile ? (
 					<div className="fileUploadContainerAfterDrag">
-						<h1>{selectedFile.name}</h1>
+						<h2>{selectedFile.name}</h2>
 						<br />
 						<div>
 							Drag again here or{' '}
@@ -95,7 +108,10 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 						</div>
 					</div>
 				)}
-				<Button onClick={handleUploadButtonClick} sx={{ height: '40px' }}>
+				<Button
+					onClick={handleUploadButtonClick}
+					sx={{ height: '40px', top: '10px', position: 'relative' }}
+				>
 					Upload Manifest
 				</Button>
 			</div>
@@ -104,19 +120,29 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 					style={{ width: '80%', backgroundColor: '#aebac5', position: 'relative', right: '0' }}
 				/>
 				<div className="fileUploadResultText">
-					{uploadSuccess ? (
+					{uploadStatus.success ? (
 						<div className="uploadSuccess">
 							<FontAwesomeIcon icon={faCheckCircle} size="lg" style={{ color: 'green' }} />
-							<span>Upload Successful!</span>
+							<span>{uploadStatus.message}</span>
+						</div>
+					) : uploadStatus.error ? (
+						<div className="uploadSuccess">
+							<FontAwesomeIcon icon={faTimesCircle} size="lg" style={{ color: 'red' }} />
+							<span>{uploadStatus.message}</span>
 						</div>
 					) : (
 						selectedFile && (
 							<>
 								<span className="uploadFileIcon">
-									<FontAwesomeIcon icon={faFile} size="2x" className="uploadIconSize" />
+									<FontAwesomeIcon icon={faFile} size="1x" className="uploadIconSize" />
 								</span>
 								<span className="fileName">{selectedFile.name}</span>
-								<span className="fileSize">
+								<span
+									className="fileSize"
+									style={{
+										color: selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024 ? 'red' : 'inherit',
+									}}
+								>
 									{(selectedFile.size / 1024 / 1024).toFixed(2)}MB / 16MB
 								</span>
 							</>

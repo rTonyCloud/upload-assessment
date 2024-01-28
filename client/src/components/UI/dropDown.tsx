@@ -16,13 +16,17 @@ const DropDown: React.FC<DropDownProps> = (props: DropDownProps): JSX.Element =>
 			value={dropDown}
 			onChange={handleDropdown}
 			style={{
-				width: '37.4vw',
-				height: '5vh',
-				padding: '5px',
-				margin: '10px',
+				display: 'flex',
+				position: 'relative',
+				width: '55%',
+				height: '3vh',
+				justifyContent: 'center',
+				alignItems: 'center',
 				borderRadius: '5px',
 				border: '1px solid #ccc',
-				top: '2px',
+				top: '5px',
+				left: '4vw',
+				fontSize: '1.2rem',
 				textAlign: 'left',
 			}}
 		>

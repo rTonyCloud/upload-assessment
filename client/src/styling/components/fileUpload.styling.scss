@@ -6,25 +6,11 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
-	margin-top: 0rem;
-	margin-bottom: 0rem;
+	margin-top: -.5rem;
 	border: 1px solid rgba(128, 128, 128, 0.373);
 	border-radius: 15px;
 	width: 37.5vw;
 	height: 30vh;
-}
-
-.fileUploadContainerBeforeDrag {
-	display: flex;
-	flex-direction: column;
-	border: 5px dashed rgba(128, 128, 128, 0.352);
-	border-radius: 20px;
-	height: 20vh;
-	width: 33.5vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
 }
 
 .fileUploadContainerDrag {
@@ -42,7 +28,7 @@
 	color: white;
 }
 
-.fileUploadContainerAfterDrag {
+.fileUploadContainerBeforeDrag {
 	display: flex;
 	flex-direction: column;
 	border: 5px dashed rgba(128, 128, 128, 0.352);
@@ -55,8 +41,17 @@
 	position: relative;
 }
 
-Button {
-	margin-top: 10px;
+.fileUploadContainerAfterDrag {
+	display: flex;
+	flex-direction: column;
+	border: 5px dashed rgba(128, 128, 128, 0.352);
+	border-radius: 20px;
+	height: 20vh;
+	width: 33.5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 .fileIcon {
@@ -87,8 +82,8 @@ Button {
 	justify-content: center;
 	position: absolute;
 	align-items: center;
-	left: 10.5vw;
-	bottom: 21.5vh;
+	left: 8.5vw;
+	bottom: 22vh;
 }
 
 .fileSize {
@@ -96,9 +91,9 @@ Button {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	left: -5vw;
+	left: 26vw;
 	right: 0;
-	bottom: 21.5vh;
+	bottom: 22vh;
 }
 
 .browse {
