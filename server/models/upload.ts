@@ -1,12 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose'
-
-interface IFile extends Document {
-	filename: string
-	mimetype: string
-	encoding: string
-	data: Buffer
-	createdAt: Date
-}
+import { IFile } from '../interfaces/modelTypes'
 
 const FileSchema: Schema<IFile> = new mongoose.Schema({
 	filename: { type: String, required: true },

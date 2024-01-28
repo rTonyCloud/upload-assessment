@@ -14,7 +14,35 @@
 	height: 30vh;
 }
 
-.fileUploadContainerText {
+.fileUploadContainerBeforeDrag {
+	display: flex;
+	flex-direction: column;
+	border: 5px dashed rgba(128, 128, 128, 0.352);
+	border-radius: 20px;
+	height: 20vh;
+	width: 33.5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.fileUploadContainerDrag {
+	display: flex;
+	flex-direction: column;
+	border: 5px dashed rgba(128, 128, 128, 0.352);
+	border-radius: 20px;
+	height: 20vh;
+	width: 33.5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.fileUploadContainerAfterDrag {
+	display: flex;
+	flex-direction: column;
 	border: 5px dashed rgba(128, 128, 128, 0.352);
 	border-radius: 20px;
 	height: 20vh;

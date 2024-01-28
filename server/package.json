@@ -2,6 +2,8 @@
 	"name": "skyhop-server",
 	"version": "1.0.0",
 	"description": "assessment test for skyhop",
+	"author": "tony rivera",
+	"license": "MIT",
 	"main": "server.js",
 	"type": "commonjs",
 	"scripts": {
@@ -9,13 +11,12 @@
 		"start": "ts-node server.ts",
 		"build": "tsc",
 		"dev": "nodemon server.ts",
-		"watch-node": "nodemon -w",
+		"watch": "nodemon server.ts -w",
 		"compile": "graphql-codegen",
 		"watch-ql": "graphql-codegen -w",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"lint": "eslint --fix ."
 	},
-	"author": "tony rivera",
-	"license": "MIT",
 	"devDependencies": {
 		"@graphql-codegen/cli": "^5.0.0",
 		"@graphql-codegen/client-preset": "^4.1.0",
