@@ -2,14 +2,15 @@
 
 .toggleContainer {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	position: relative;
 }
 
 .toggleLabel {
 	display: flex;
 	position: relative;
-	bottom: 0vh;
-	left: 0vw;
+	top: 5vh;
+	right: 8vw;
 }
 
 .toggleWrapper {
@@ -89,12 +90,13 @@ input:checked + .slider:before {
 		justify-content: center ;
 		align-items: center;
 		gap: 0rem !important;
-		left:.5vw;
+		left:-9vw;
+		bottom: 2vh;
 	}
 	.toggleLabel {
 		display: flex;
 		position: relative;
-		bottom: 1vh;
+		bottom: 5vh;
 		left: 1vw;
 	}
 	.switch {
