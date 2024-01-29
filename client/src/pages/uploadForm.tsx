@@ -39,10 +39,9 @@ export default function Upload() {
 
 	return (
 		<>
-			<Button onClick={toggle}>Upload Now</Button>
+			<Button type='button' onClick={toggle}>Upload Now</Button>
 			<Modal toggle={toggle} isOpen={isOpen}>
-
-				<button onClick={toggle} className="closeBtn closeBody">
+				<button type='button' onClick={toggle} className="closeBtn closeBody">
 					<FontAwesomeIcon icon={faX} />
 				</button>
 				{submissionStatus ? (
@@ -53,20 +52,20 @@ export default function Upload() {
 				) : (
 					<form className="modalContainer">
 						<div className="modalWrapper">
-								<div className="modalHeader">
-									<h1>Document Upload</h1>
-									<HR
-										style={{
-											width: '50%',
-											height: '.01vh',
-											left: '.1vw',
-											backgroundColor: '#aebac5',
-										}}
-									/>
-								</div>
+							<div className="modalHeader">
+								<h1>Document Upload</h1>
+								<HR
+									style={{
+										width: '50%',
+										height: '.01vh',
+										left: '.1vw',
+										backgroundColor: '#aebac5',
+									}}
+								/>
+							</div>
 							<div className="modalBody">
 								<section className="modalBodyLeft">
-									<div className="dropdownImport">
+									<div className="dropDownImport">
 										<DropDown
 											placeholder="Select Import Name:"
 											onSelect={() => importOptions}
@@ -168,10 +167,10 @@ export default function Upload() {
 										<h3>Data in the import file is correct. Please press Continue to import.</h3>
 									</div>
 									<div className="footerBtn">
-										<Button sx={{ width: '30px', height: '50px' }} onClick={handleSubmission}>
+										<Button type='submit' sx={{ width: '30px', height: '50px' }} onClick={handleSubmission}>
 											Continue Import
 										</Button>
-										<Button variant="orange" onClick={toggle}>
+										<Button type='button' variant="orange" onClick={toggle}>
 											Cancel
 										</Button>
 									</div>

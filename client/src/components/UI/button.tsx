@@ -1,7 +1,7 @@
 import { ButtonProps } from '../../types/components/buttonInterface'
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
-	const { children, variant, sx, onClick, disabled, type } = props
+	const { children, className, variant, sx, onClick, disabled, type } = props
 
 	const returnButtonStyles = (): {
 		backgroundColor: string
@@ -27,6 +27,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
 			onClick={onClick}
 			type={type}
 			disabled={disabled}
+			className={className}
 			style={{
 				fontSize: '18px',
 				fontWeight: 500,

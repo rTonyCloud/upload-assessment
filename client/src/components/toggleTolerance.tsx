@@ -33,25 +33,28 @@ const Toggle: React.FC<ToggleProps> = (props: ToggleProps): JSX.Element => {
 						<input type="checkbox" checked={isToggle} onChange={handleToggle} />
 						<span className="slider"></span>
 					</label>
-					{isToggle ? (
-						<>
-							{' '}
-							Toggle ON &nbsp;&nbsp; | &nbsp;&nbsp;
-							<FontAwesomeIcon icon={faClock} />
-							&nbsp;&nbsp;Select Tolerance Level:{' '}
-						</>
-					) : (
-						'Toggle OFF'
-					)}
-					{isToggle && (
-						<select value={selectedTolerance} onChange={handleToleranceChange}>
-							{toleranceOptions?.map((option, index) => (
-								<option key={index} value={option}>
-									{option}
-								</option>
-							))}
-						</select>
-					)}
+					<div className="toggleLabel">
+						{isToggle ? (
+							<>
+								{' '}
+								Toggle ON &nbsp;&nbsp; | &nbsp;&nbsp;
+								<FontAwesomeIcon icon={faClock} />
+								&nbsp;&nbsp;Select Tolerance Level:{' '}
+							</>
+						) : (
+							'Toggle OFF'
+						)}
+
+						{isToggle && (
+							<select value={selectedTolerance} onChange={handleToleranceChange}>
+								{toleranceOptions?.map((option, index) => (
+									<option key={index} value={option}>
+										{option}
+									</option>
+								))}
+							</select>
+						)}
+					</div>
 				</div>
 			</div>
 		</>

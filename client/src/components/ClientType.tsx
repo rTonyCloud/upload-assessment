@@ -53,8 +53,8 @@ const SelectClientType: React.FC = (): JSX.Element => {
 					{[1, 2, 3, 4].map((centersNumber) => (
 						<label key={centersNumber}>
 							<h4 className="centerHeader">{`Testing Center ${centersNumber}:`}</h4>
-							<select defaultValue="">
-								<option value="" disabled>
+							<select defaultValue="select-test-Center">
+								<option value="select-test-Center" disabled>
 									Select Client
 								</option>
 								{testCenterClients.map((testCenters) => (
