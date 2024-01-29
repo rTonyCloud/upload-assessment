@@ -29,11 +29,11 @@ const Toggle: React.FC<ToggleProps> = (props: ToggleProps): JSX.Element => {
 		<>
 			<div className="toggleContainer">
 				<div className="toggleWrapper">
+					<div className="toggleLabel">
 					<label className="switch">
 						<input type="checkbox" checked={isToggle} onChange={handleToggle} />
 						<span className="slider"></span>
 					</label>
-					<div className="toggleLabel">
 						{isToggle ? (
 							<>
 								{' '}
