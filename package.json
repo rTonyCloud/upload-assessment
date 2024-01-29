@@ -14,7 +14,7 @@
 		"install:client": "cd client && npm install",
 		"install:all": "npm run install:root && npm run install:server && npm run install:client",
 		"seed": "cd server && npm run seed",
-		"build": "concurrently \"cd client && tsc && vite build\" \"cd server && tsc\"",
+		"build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
 		"lint": "concurrently \"cd server && npm run lint\" \"cd client && npm run lint\"",
 		"format": "concurrently \"cd server && npm run format\" \"cd client && npm run format\"",
 		"db:up": "docker-compose -p upload-assessment up -d db",
