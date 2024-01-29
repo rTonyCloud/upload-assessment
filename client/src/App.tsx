@@ -1,6 +1,5 @@
-import './styling/App.scss'
 import UploadForm from './pages/uploadForm'
-
+import './styles/App.scss'
 function App() {
 	return (
 		<>

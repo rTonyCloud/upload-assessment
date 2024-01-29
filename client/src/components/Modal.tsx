@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styling/components/modal.styling.scss'
+import '../styles/components/modal.styling.scss'
 import { ModalType } from '../types/modaInterface'
 
 const Modal: React.FC<ModalType> = (props: ModalType): JSX.Element => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
-import '../styling/toggleTolerance.styling.scss'
+import '../styles/toggleTolerance.styling.scss'
 import { ToggleProps } from '../types/toggleInterface'
 
 const Toggle: React.FC<ToggleProps> = (props: ToggleProps): JSX.Element => {

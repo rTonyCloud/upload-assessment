@@ -1,4 +1,4 @@
-import '../styling/upload.styling.scss'
+import '../styles/upload.styling.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../components/Modal'
@@ -39,9 +39,11 @@ export default function Upload() {
 
 	return (
 		<>
-			<Button type='button' onClick={toggle}>Upload Now</Button>
+			<Button type="button" onClick={toggle}>
+				Upload Now
+			</Button>
 			<Modal toggle={toggle} isOpen={isOpen}>
-				<button type='button' onClick={toggle} className="closeBtn closeBody">
+				<button type="button" onClick={toggle} className="closeBtn closeBody">
 					<FontAwesomeIcon icon={faX} />
 				</button>
 				{submissionStatus ? (
@@ -167,10 +169,14 @@ export default function Upload() {
 										<h3>Data in the import file is correct. Please press Continue to import.</h3>
 									</div>
 									<div className="footerBtn">
-										<Button type='submit' sx={{ width: '30px', height: '50px' }} onClick={handleSubmission}>
+										<Button
+											type="submit"
+											sx={{ width: '30px', height: '50px' }}
+											onClick={handleSubmission}
+										>
 											Continue Import
 										</Button>
-										<Button type='button' variant="orange" onClick={toggle}>
+										<Button type="button" variant="orange" onClick={toggle}>
 											Cancel
 										</Button>
 									</div>

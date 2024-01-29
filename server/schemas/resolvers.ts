@@ -1,7 +1,4 @@
-import { finished } from 'stream/promises'
 import FileModel from '../models/upload'
-import fs, { createReadStream } from 'fs'
-import path from 'path'
 // @ts-ignore
 import { GraphQLUpload } from 'graphql-upload'
 import { File, Resolvers } from '../interfaces/uploadTypes'
