@@ -7,9 +7,9 @@
 		"node": "21.0.0"
 	},
 	"scripts": {
-		"dev": "vite",
-		"build": "npx tsc && vite build",
-		"preview": "vite preview",
+		"start": "vite preview --mode development",
+		"build": "tsc && vite build",
+		"preview": "vite preview --mode production",
 		"lint": "eslint .",
 		"format": "prettier --write ."
 	},
