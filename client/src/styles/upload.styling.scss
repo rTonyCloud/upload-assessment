@@ -184,10 +184,13 @@ HR {
 	}
 
 	.toleranceSection {
+		display: flex;
+		justify-content: flex-start;
+		position: relative;
 		font-size: 0.7em;
+		bottom:5vh;
 		
 		h4 {
-			position: relative;
 			font-size: 1em;
 			top: 1vh;
 		}

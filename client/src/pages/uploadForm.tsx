@@ -110,7 +110,7 @@ export default function Upload() {
 									<HR
 										style={{
 											width: '40%',
-											bottom: '1.5vh',
+											top: '-1.5vh',
 											right: '9.5vw',
 											backgroundColor: '#e0e8eff5',
 										}}
