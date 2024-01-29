@@ -15,7 +15,8 @@
 		"compile": "graphql-codegen",
 		"watch-ql": "graphql-codegen -w",
 		"format": "prettier --write .",
-		"lint": "eslint --fix ."
+		"lint": "eslint . --ext .ts",
+		"watch:server": "nodemon './dist/server.js' --watch './dist'"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "^5.0.0",
@@ -30,6 +31,7 @@
 	},
 	"dependencies": {
 		"@apollo/server": "^4.10.0",
+		"@parcel/watcher": "^2.4.0",
 		"apollo-server-express": "^3.13.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.1",
@@ -38,10 +40,9 @@
 		"graphql-upload": "^13.0.0",
 		"mongoose": "^8.1.0"
 	},
-	"exports": {
-		".": {
-			"require": "./server.ts",
-			"import": "./server.ts"
-		}
-	}
+	"exclude": [
+		"dist",
+		"build",
+		"node_modules"
+	]
 }

@@ -1,8 +1,8 @@
+import '../styles/components/fileUpload.styling.scss'
 import React from 'react'
 import Button from './UI/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFile, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import '../styling/components/fileUpload.styling.scss'
 import HR from './UI/hr'
 import { useMutation } from '@apollo/client'
 import { uploadFiles } from '../graphql/singleUpload'
@@ -25,7 +25,7 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 	})
 	const [uploadFile] = useMutation(uploadFiles)
 
-	// max file size in MB && styling for file upload
+	// max file size in MB && styles for file upload
 	const MAX_FILE_SIZE_MB = 16
 	const getUploadFileStyle = (fileSize: number) => {
 		return {
@@ -118,7 +118,7 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 					</div>
 				)}
 				<Button
-					type='button'
+					type="button"
 					onClick={handleUploadButtonClick}
 					className="uploadButton"
 					sx={{ height: '40px', top: '10px', position: 'relative' }}

@@ -1,7 +1,7 @@
 import { testCenterClients } from '../data/Data'
 import useSelectClient from '../hooks/useSelectClient'
 import RadioButton from './UI/radio'
-import '../styling/components/clientType.styling.scss'
+import '../styles/components/clientType.styling.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 

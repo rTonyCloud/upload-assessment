@@ -1,4 +1,3 @@
-// @ts-ignore
 interface File {
 	filename: string
 	mimetype: string
@@ -18,6 +17,7 @@ interface SingleUploadMutationResponse extends File {}
 
 interface Resolvers {
 	Upload: Promise<UploadFile>
+
 	Query: {
 		uploads: () => Promise<File[]>
 	}

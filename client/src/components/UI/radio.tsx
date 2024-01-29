@@ -1,4 +1,4 @@
-import '../../styling/components/UI/radio.styling.scss'
+import '../../styles/components/UI/radio.styling.scss'
 import { RadioButtonProps } from '../../types/components/radioButtonInterface'
 
 const RadioButton: React.FC<RadioButtonProps> = (props: RadioButtonProps): JSX.Element => {

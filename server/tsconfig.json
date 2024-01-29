@@ -1,10 +1,9 @@
 {
-	"include": ["server/**/*", "types/**/*", "global.d.ts"],
 	"compilerOptions": {
 		"incremental": true,
 		"target": "es2021",
 		"module": "commonjs",
-		"outDir": "dist",
+		"outDir":"./dist",
 		"rootDir": ".",
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
@@ -20,10 +19,6 @@
 		"noImplicitThis": true,
 		"alwaysStrict": true,
 	},
-	"exports": {
-		".": {
-			"require": "./server.ts",
-			"import": "./server.ts",
-		},
-	},
+	"include": ["./**/*"],
+	"exclude": ["node_modules", "dist"],
 }
