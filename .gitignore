@@ -25,7 +25,7 @@ package-lock.json
 
 # Production build files
 /client/build/
+client/dist/
 /server/build/
-/dist/
-/out/
+server/dist/
 
