@@ -137,7 +137,7 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 							<span>{uploadStatus.message}</span>
 						</div>
 					) : uploadStatus.error ? (
-						<div className="uploadSuccess">
+						<div className="uploadError">
 							<FontAwesomeIcon icon={faTimesCircle} size="lg" style={{ color: 'red' }} />
 							<span>{uploadStatus.message}</span>
 						</div>
