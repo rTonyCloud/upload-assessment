@@ -5,13 +5,20 @@
 	flex-direction: row;
 }
 
+.toggleLabel {
+	display: flex;
+	position: relative;
+	bottom: 0vh;
+	left: 0vw;
+}
+
 .toggleWrapper {
 	display: flex;
 	position: relative;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	left: 1vw;
+	left: .5vw;
 }
 
 .switch {
