@@ -5,4 +5,5 @@ export interface ButtonProps {
 	type?: 'button' | 'submit' | undefined
 	onClick?: React.MouseEventHandler<HTMLButtonElement>
 	children: React.ReactNode
+	className?: string
 }

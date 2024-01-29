@@ -1,4 +1,4 @@
-export interface FileUploadProps {
+export interface FileUploadProps extends React.HTMLAttributes<HTMLDivElement> {
 	isDrag: boolean
 	selectedFile: File | null
 	handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void

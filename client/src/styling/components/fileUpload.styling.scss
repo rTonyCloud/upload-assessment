@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
-	margin-top: -.5rem;
+	margin-top: -0.5rem;
 	border: 1px solid rgba(128, 128, 128, 0.373);
 	border-radius: 15px;
 	width: 37.5vw;
@@ -125,12 +125,18 @@
 	.fileName {
 		position: absolute;
 		font-size: 0.8em;
-		top: 49vh;
+		top: 43vh;
+		right: 27vw;
 	}
 
 	.uploadIconSize {
 		font-size: 1em;
 		position: relative;
 		top: 1vh;
+	}
+
+	.uploadButton{
+		position: relative;
+		top: 1vh !important;
 	}
 }

@@ -87,7 +87,7 @@ HR {
 		display: flex;
 		flex-direction: row;
 		position: relative;
-		right: .6vw;
+		right: 0.6vw;
 	}
 }
 .socialDistancingRadio {
@@ -145,7 +145,9 @@ HR {
 
 .footerBtn {
 	display: flex;
-	position: absolute;
+	position: relative;
+	justify-content: center;
+	
 	gap: 1rem;
 }
 
@@ -159,14 +161,22 @@ HR {
 		font-size: 0.8em;
 	}
 
-	.dropdownImport {
-		font-size: 0em;
+	.modalBodyRight {
+		height: 10vh !important;
 	}
-
 	.uploadSectionText {
 		h3 {
 			font-size: 0.8em;
 		}
+	}
+
+	.dropDownImport > div > select {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		top: 2vh !important;
+		height: 4vh !important;
+		font-size: 1em !important;
 	}
 
 	.elapseData {
@@ -174,19 +184,33 @@ HR {
 	}
 
 	.toleranceSection {
-		font-size: 0.6em;
+		font-size: 0.7em;
+		
+		h4 {
+			position: relative;
+			font-size: 1em;
+			top: 1vh;
+		}
 	}
 
 	.socialDistancingSection {
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 
 	.locationSection {
-		font-size: 0.6em;
+		font-size: 0.7em;
 	}
 
 	.modalFooterText {
 		h3 {
+			font-size: 0.7em;
+		}
+	}
+
+	.clientSection{
+		font-size: 1em;
+		
+		#testCenter {
 			font-size: 0.8em;
 		}
 	}
@@ -194,7 +218,7 @@ HR {
 	.footerBtn {
 		Button {
 			position: relative;
-			font-size: 0.6em !important;
+			font-size: .6em !important;
 			height: 4em !important;
 			bottom: 1vh !important;
 		}

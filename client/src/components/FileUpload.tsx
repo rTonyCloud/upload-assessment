@@ -24,10 +24,19 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 		message: '',
 	})
 	const [uploadFile] = useMutation(uploadFiles)
-	const MAX_FILE_SIZE_MB = 16
 
+	// max file size in MB && styling for file upload
+	const MAX_FILE_SIZE_MB = 16
+	const getUploadFileStyle = (fileSize: number) => {
+		return {
+			color: fileSize > MAX_FILE_SIZE_MB * 1024 * 1024 ? 'red' : 'inherit',
+		}
+	}
+
+	// browse button
 	const handleBrowse = () => uploadRef?.current?.click()
 
+	//upload handler with error handling
 	const handleUploadButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
 		event.preventDefault()
 		if (!selectedFile) {
@@ -109,7 +118,9 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 					</div>
 				)}
 				<Button
+					type='button'
 					onClick={handleUploadButtonClick}
+					className="uploadButton"
 					sx={{ height: '40px', top: '10px', position: 'relative' }}
 				>
 					Upload Manifest
@@ -137,12 +148,7 @@ const FileUpload: React.FC<FileUploadProps> = (props: FileUploadProps): JSX.Elem
 									<FontAwesomeIcon icon={faFile} size="1x" className="uploadIconSize" />
 								</span>
 								<span className="fileName">{selectedFile.name}</span>
-								<span
-									className="fileSize"
-									style={{
-										color: selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024 ? 'red' : 'inherit',
-									}}
-								>
+								<span className="fileSize" style={getUploadFileStyle(selectedFile.size)}>
 									{(selectedFile.size / 1024 / 1024).toFixed(2)}MB / 16MB
 								</span>
 							</>
