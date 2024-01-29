@@ -6,7 +6,7 @@ import { ConnectDB } from './config/connection'
 import express from 'express'
 //@ts-ignore
 import cors from 'cors'
-import { PORT, API_SERVER, corsOptions, MAX_FILE_SIZE, MAX_FILES } from './helper/dotEnv'
+import { PORT, API_SERVER, corsOption, MAX_FILE_SIZE, MAX_FILES } from './helper/dotEnv'
 const { ApolloServerPluginLandingPageLocalDefault } = require('apollo-server-core')
 const { graphqlUploadExpress } = require('graphql-upload')
 async function startApolloServer(typeDefs: any, resolvers: {}) {
@@ -14,7 +14,7 @@ async function startApolloServer(typeDefs: any, resolvers: {}) {
 
 	app.use(express.json())
 	app.use(express.urlencoded({ extended: true }))
-	app.use(cors(corsOptions))
+	app.use(cors(corsOption))
 
 	app.use(graphqlUploadExpress({ maxFileSize: MAX_FILE_SIZE, maxFiles: MAX_FILES }))
 

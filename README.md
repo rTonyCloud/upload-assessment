@@ -26,12 +26,13 @@ An app to upload documentation within a modal
 ## Installation
 You must have docker installed on your machine https://www.docker.com/  
 convert .env.example to .env  
-Install dependencies - npm run install:all  
-Setup the application - npm run setup - this will build the entire application and run it on port 4000  
-To run the application - npm run start  
+run npm start setup to install all dependencies, build the app & server, and run the app & server
 
 ## usage
-you can run npm install to install all dependencies on all repos
+you can run npm install to install all dependencies on all packages within the project
+- npm run install:all
+- npm run install:client
+- npm run install:server
 
 ## Licenses
 This project is licenses under MIT license.
@@ -40,7 +41,7 @@ This project is licenses under MIT license.
 npm test
 
 ## languages
-React w/ vite, HTML, SCSS, Node.js, Express, Apollo, Graphql, MongoDB
+React w/ vite, Typescript HTML, SCSS, Node.js, Express, Apollo, Graphql & MongoDB
 
 ## Questions
 If you need to ask me any questions you can contact me at rtonycloud@gmail.com.
