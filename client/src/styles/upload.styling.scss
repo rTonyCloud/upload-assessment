@@ -126,7 +126,7 @@ HR {
 .uploadSectionText {
 	display: flex;
 	position: relative;
-	left: 5vw;
+	left: 4vw;
 	text-align: left;
 }
 
@@ -147,7 +147,7 @@ HR {
 	display: flex;
 	position: relative;
 	justify-content: center;
-	
+
 	gap: 1rem;
 }
 
@@ -188,8 +188,8 @@ HR {
 		justify-content: flex-start;
 		position: relative;
 		font-size: 0.7em;
-		bottom:5vh;
-		
+		bottom: 5vh;
+
 		h4 {
 			font-size: 1em;
 			top: 1vh;
@@ -210,9 +210,9 @@ HR {
 		}
 	}
 
-	.clientSection{
+	.clientSection {
 		font-size: 1em;
-		
+
 		#testCenter {
 			font-size: 0.8em;
 		}
@@ -221,7 +221,7 @@ HR {
 	.footerBtn {
 		Button {
 			position: relative;
-			font-size: .6em !important;
+			font-size: 0.6em !important;
 			height: 4em !important;
 			bottom: 1vh !important;
 		}

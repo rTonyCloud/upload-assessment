@@ -19,7 +19,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	left: .5vw;
+	left: 0.5vw;
 }
 
 .switch {
@@ -84,13 +84,13 @@ input:checked + .slider:before {
 		top: 2vh;
 	}
 
-	.toggleWrapper{
+	.toggleWrapper {
 		display: flex;
 		position: relative;
-		justify-content: center ;
+		justify-content: center;
 		align-items: center;
 		gap: 0rem !important;
-		left:-9vw;
+		left: -9vw;
 		bottom: 2vh;
 	}
 	.toggleLabel {
