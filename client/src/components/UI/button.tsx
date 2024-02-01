@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
 				return {
 					backgroundColor: '#fff',
 					color: '#FF8C00',
-					border: '4px solid #FF8C00',
+					border: '2px solid #FF8C00',
 				}
 			default:
 				return { backgroundColor: 'hsl(215.12deg 59.42% 27.06%)', color: '#fff' }

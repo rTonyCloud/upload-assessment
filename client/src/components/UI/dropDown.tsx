@@ -18,10 +18,8 @@ const DropDown: React.FC<DropDownProps> = (props: DropDownProps): JSX.Element =>
 				style={{
 					display: 'flex',
 					position: 'relative',
-					width: '55%',
-					height: '3vh',
-					justifyContent: 'center',
-					alignItems: 'center',
+					width: '83%',
+					height: '5vh',
 					borderRadius: '5px',
 					top: '5px',
 					left: '4vw',

@@ -129,7 +129,7 @@
 		right: 27vw;
 	}
 
-	.fileSize{
+	.fileSize {
 		position: absolute;
 		font-size: 0.8em;
 		top: 44vh;
@@ -142,15 +142,15 @@
 		top: 1vh;
 	}
 
-	.uploadButton{
+	.uploadButton {
 		position: relative;
 		top: 1vh !important;
 	}
 
 	.uploadError {
-		font-size: .8em;
+		font-size: 0.8em;
 	}
-	..uploadSuccess {
-		font-size: .8em;
+	.uploadSuccess {
+		font-size: 0.8em;
 	}
 }

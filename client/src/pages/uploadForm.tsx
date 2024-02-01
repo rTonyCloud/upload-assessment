@@ -66,7 +66,7 @@ export default function Upload() {
 								/>
 							</div>
 							<div className="modalBody">
-								<section className="modalBodyLeft">
+								<aside className="modalBodyLeft">
 									<div className="dropDownImport">
 										<DropDown
 											placeholder="Select Import Name:"
@@ -75,8 +75,11 @@ export default function Upload() {
 										/>
 										<HR
 											style={{
-												width: '54%',
+												width: '60%',
 												height: '.01vh',
+												position:'relative',
+												top: '1.5vh',
+												right: '5vw',
 												backgroundColor: '#aebac5',
 											}}
 										/>
@@ -119,8 +122,8 @@ export default function Upload() {
 										<h4>Tolerance Window:</h4>
 										<Toggle onToggle={handleToggle} toleranceOptions={toleranceOptions} />
 									</div>
-								</section>
-								<section className="modalBodyRight">
+								</aside>
+								<aside className="modalBodyRight">
 									<div className="socialDistancingSection">
 										<h4>Split schedule using social distancing</h4>
 										<div className="socialDistancingRadio">
@@ -128,12 +131,12 @@ export default function Upload() {
 												name="socialDistancing"
 												value="yes"
 												label="Yes"
-												checked={selectRadio === 'yes'}
+											checked={selectRadio === 'yes'}
 												onChange={handleDistanceChange}
 											/>
 											<RadioButton
 												name="socialDistancing"
-												value="no"
+													value="no"
 												label="No"
 												checked={selectRadio === 'no'}
 												onChange={handleDistanceChange}
@@ -163,7 +166,7 @@ export default function Upload() {
 									<div className="clientSection">
 										<SelectClientType />
 									</div>
-								</section>
+								</aside>
 								<section className="modalFooter">
 									<div className="modalFooterText">
 										<h3>Data in the import file is correct. Please press Continue to import.</h3>

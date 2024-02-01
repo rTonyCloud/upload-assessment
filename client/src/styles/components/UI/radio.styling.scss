@@ -15,6 +15,14 @@
 	}
 }
 
+input:checked ~ .radioLabel {
+	accent-color: #000;
+}
+
+input:has {
+	border: 1px solid #000;
+}
+
 .radioLabel {
 	display: flex;
 	position: relative;
