@@ -23,7 +23,7 @@
 	"author": "tony rivera",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^20.11.5",
+		"@types/node": "^22.7.5",
 		"autoprefixer": "^10.4.17",
 		"concurrently": "^8.2.2",
 		"prettier": "^3.1.1"
